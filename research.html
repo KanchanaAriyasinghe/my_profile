@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Research - Kanchana Ariyasinghe</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <style>
+        /* Video Container Styles */
+        .video-container {
+            margin: 40px 0;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+            background: var(--bg-color-alt);
+            border: 1px solid var(--border-color);
+        }
+
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-wrapper video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .video-controls {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 15px 20px;
+            background: rgba(27, 38, 59, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .video-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+
+        .video-actions {
+            display: flex;
+            gap: 12px;
+        }
+
+        .video-btn {
+            padding: 8px 16px;
+            background: rgba(0, 163, 255, 0.1);
+            border: 1px solid var(--primary-color);
+            border-radius: 6px;
+            color: var(--primary-color);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .video-btn:hover {
+            background: var(--primary-color);
+            color: var(--bg-color);
+            transform: translateY(-2px);
+        }
+
+        .video-description {
+            padding: 20px;
+            color: var(--secondary-color);
+            line-height: 1.7;
+        }
+
+        .video-description h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .video-tag {
+            background: rgba(0, 163, 255, 0.1);
+            color: var(--primary-color);
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            border: 1px solid var(--primary-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .video-controls {
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .video-actions {
+                width: 100%;
+                justify-content: flex-start;
+            }
+
+            .video-btn {
+                flex: 1;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="header">
+        <div class="container">
+            <a href="index.html" class="logo">Kanchana Ariyasinghe | Computer Engineering | UOJ</a>
+            <nav class="navbar">
+                <ul class="nav-list">
+                    <li><a href="index.html">About</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="research.html" class="active">Research</a></li>
+                </ul>
+            </nav>
+            <button class="hamburger" id="hamburger">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <section class="section">
+            <div class="container">
+                <h1 class="page-title">My Research</h1>
+
+                <div class="research-list">
+                    <!-- RESEARCH ITEM 1 -->
+                    <div class="research-item">
+                        <h3>Potholes Detection using Advanced Object Detection Techniques (Ongoing)</h3>
+                        <p class="research-abstract">
+                            <strong>Abstract:</strong> Developed a real-time pothole detection system using an ensemble of YOLOv8m and MobileNetV2 models, 
+achieving 90.3% accuracy across challenging conditions like low-light, rain, and cluttered environments. Integrated 
+advanced preprocessing (CycleGAN, CLAHE), model optimization and edge deployment for scalable 
+smart road monitoring.
+                        </p>
+
+                        <!-- VIDEO SECTION -->
+                        <div class="video-container">
+                            <div class="video-wrapper">
+                                <video id="researchVideo" controls>
+                                    <source src="assets/Media1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
+                            <div class="video-controls">
+                                <span class="video-title">Pothole Detection System Demo</span>
+                                <div class="video-actions">
+                                    <button class="video-btn" id="playPauseBtn">
+                                        <i class="fas fa-play"></i> Play
+                                    </button>
+                                    <button class="video-btn" id="fullscreenBtn">
+                                        <i class="fas fa-expand"></i> Fullscreen
+                                    </button>
+                                    <button class="video-btn" id="downloadBtn">
+                                        <i class="fas fa-download"></i> Download
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="video-description">
+                                <h4>Video Overview</h4>
+                                <p>This video demonstrates the real-time pothole detection system in action. You can see how the ensemble model (YOLOv8m + MobileNetV2) identifies and highlights potholes with high accuracy even under challenging conditions such as poor lighting and wet roads.</p>
+                                <div class="video-tags">
+                                    <span class="video-tag">YOLOv8m</span>
+                                    <span class="video-tag">MobileNetV2</span>
+                                    <span class="video-tag">Computer Vision</span>
+                                    <span class="video-tag">Real-time Detection</span>
+                                    <span class="video-tag">Deep Learning</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- RESEARCH ITEM 2 (UNCOMMENT TO ADD MORE) -->
+                    <!-- <div class="research-item">
+                        <h3>Research Title Here</h3>
+                        <p class="research-meta">Published in <strong>[Journal or Conference Name]</strong>, [Year]</p>
+                        <p class="research-authors"><strong>Authors:</strong> [Your Name], [Co-author 1], [Co-author 2]</p>
+                        <p class="research-abstract">
+                            <strong>Abstract:</strong> Write a concise summary of your research here.
+                        </p>
+                        <a href="[Link to PDF or DOI]" class="btn" target="_blank">Read Paper</a>
+                    </div> -->
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Kanchana Ariyasinghe. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script>
+        // Video Controls JavaScript
+        const video = document.getElementById('researchVideo');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const fullscreenBtn = document.getElementById('fullscreenBtn');
+        const downloadBtn = document.getElementById('downloadBtn');
+
+        // Play/Pause Button
+        playPauseBtn.addEventListener('click', function() {
+            if (video.paused) {
+                video.play();
+                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+            } else {
+                video.pause();
+                playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+            }
+        });
+
+        // Update button text when video plays/pauses
+        video.addEventListener('play', function() {
+            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        });
+
+        video.addEventListener('pause', function() {
+            playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+        });
+
+        // Fullscreen Button
+        fullscreenBtn.addEventListener('click', function() {
+            if (video.requestFullscreen) {
+                video.requestFullscreen();
+            } else if (video.webkitRequestFullscreen) {
+                video.webkitRequestFullscreen();
+            } else if (video.mozRequestFullScreen) {
+                video.mozRequestFullScreen();
+            } else if (video.msRequestFullscreen) {
+                video.msRequestFullscreen();
+            }
+        });
+
+        // Download Button
+        downloadBtn.addEventListener('click', function() {
+            const link = document.createElement('a');
+            link.href = 'videos/pothole-detection-demo.mp4';
+            link.download = 'pothole-detection-demo.mp4';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
+    </script>
+</body>
+</html>
