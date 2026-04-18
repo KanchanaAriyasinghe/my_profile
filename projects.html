@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Projects - Your Name</title>
+    <title>Projects — Kanchana Ariyasinghe</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
@@ -11,163 +11,176 @@
 
     <header class="header">
         <div class="container">
-            <a href="index.html" class="logo">Kanchana Ariyasinghe | Computer Engineering | UOJ</a>
-            <nav class="navbar">
+            <a href="index.html" class="logo">KA<span>.</span></a>
+            <nav class="navbar" id="navbar">
                 <ul class="nav-list">
                     <li><a href="index.html">About</a></li>
                     <li><a href="projects.html" class="active">Projects</a></li>
                     <li><a href="research.html">Research</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
     <main>
-        <section class="section">
+        <section class="section page-hero">
             <div class="container">
-                <h1 class="page-title">My Projects</h1>
-                <p class="page-subtitle">A selection of my favorite personal and professional work.</p>
+                <div class="page-hero-text">
+                    <div class="block-label"><i class="fas fa-folder-open"></i> Portfolio</div>
+                    <h1 class="page-title">My <span class="gradient-text">Projects</span></h1>
+                    <p class="page-subtitle">A curated selection of work spanning full-stack web, IoT, and AI/ML applications.</p>
+                </div>
 
                 <div class="project-grid">
+
                     <!-- PROJECT 1 -->
-                    <div class="project-card">
-                        <img src="assets/project1.png" alt="Project 1 Screenshot">
-                        <div class="project-info">
-                            <h3>Computer Lab Booking and Equipment Borrowing System</h3>
-                            <p>Developed a web system for booking labs and borrowing equipment using MERN stack.</p>
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>API</span>
-                            </div>
-                            <div class="project-links">
-                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEu80i8BfzsxgDSrTgdOV61CZZQ-xcp4laU" class="btn" target="_blank">Live Demo</a>
-                                <a href="https://github.com/KanchanaAriyasinghe/Computer-Lab-booking-and-equipments-borrowing" class="btn-secondary" target="_blank">GitHub</a>
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/project1.png" alt="Computer Lab Booking System">
+                            <div class="project-overlay">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/KanchanaAriyasinghe/Computer-Lab-booking-and-equipments-borrowing" target="_blank" class="overlay-btn"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span>React</span><span>Node.js</span><span>MongoDB</span>
+                            </div>
+                            <h3>Computer Lab Booking &amp; Equipment Borrowing</h3>
+                            <p>Full-stack MERN system for booking labs and borrowing equipment with real-time availability tracking.</p>
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/KanchanaAriyasinghe/Computer-Lab-booking-and-equipments-borrowing" target="_blank" class="btn-secondary btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
 
                     <!-- PROJECT 2 -->
-                    <div class="project-card">
-                        <img src="assets/project2.png" alt="Project 2 Screenshot">
-                        <div class="project-info">
-                            <h3>The Smart Medicine Reminder Box</h3>
-                            <p>Developed the Smart Medicine Reminder Box, an IoT-based device for automated medication tracking and 
-reminders. Enabled real-time scheduling via a web interface, with cloud data management powered by Firebase. </p>
-                         
-                            <div class="project-links">
-                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEu80i8BfzsxgDSrTgdOV61CZZQ-xcp4laU" class="btn" target="_blank">Live Demo</a>
-                                <a href="[https://github.com/BuddhiniNavoda/smart-medical-reminder-box-EC6020" class="btn-secondary" target="_blank">GitHub</a>
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/project2.png" alt="Smart Medicine Reminder Box">
+                            <div class="project-overlay">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/BuddhiniNavoda/smart-medical-reminder-box-EC6020" target="_blank" class="overlay-btn"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span>IoT</span><span>ESP32</span><span>Firebase</span>
+                            </div>
+                            <h3>Smart Medicine Reminder Box</h3>
+                            <p>IoT-based device for automated medication tracking with real-time scheduling via a web interface powered by Firebase.</p>
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/BuddhiniNavoda/smart-medical-reminder-box-EC6020" target="_blank" class="btn-secondary btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
 
-                       <!-- PROJECT 1 -->
-                    <div class="project-card">
-                        <img src="assets/project4.png" alt="Project 4 Screenshot">
-                        <div class="project-info">
+                    <!-- PROJECT 3 -->
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/project7.png" alt="Research AI Chatbot">
+                            <div class="project-overlay">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_ai-machinelearning-nlp-activity-7395024416532955136--301" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i></a>
+                                <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="overlay-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span>Python</span><span>Flask</span><span>Groq API</span><span>arXiv</span>
+                            </div>
+                            <h3>Research AI Chatbot</h3>
+                            <p>Intelligent assistant that combines PDF analysis, academic paper discovery, and conversational AI to support researchers.</p>
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_ai-machinelearning-nlp-activity-7395024416532955136--301" target="_blank" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Demo</a>
+                                <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="btn-secondary btn-sm"><i class="fab fa-github"></i> Code</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 4 -->
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/project4.png" alt="Movie Finder">
+                            <div class="project-overlay">
+                                <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="overlay-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span>React</span><span>TMDB API</span><span>JavaScript</span>
+                            </div>
                             <h3>Movie Finder</h3>
-                            <p>Movie Finder Website A simple and elegant web application for discovering movies.</p>
-                            <div class="project-tags">
-                                <span>React</span>
-
-                                <span>TMDB API</span>
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>vanilla JavaScript</span>
-                            </div>
+                            <p>A clean web application for discovering movies, browsing details, and exploring genres via the TMDB API.</p>
                             <div class="project-links">
-                            
-                                <a href="https://github.com/KanchanaAriyasinghe/movie-website" class="btn-secondary" target="_blank">GitHub</a>
+                                <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="btn-secondary btn-sm"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="project-card">
-                        <img src="assets/project3.png" alt="Project 3 Screenshot">
-                        <div class="project-info">
-                            <h3>Smart Currency Converter </h3>
-                            <p> Convert currencies using real-time and historical data.</p>
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>Open Exchange Rates API</span>
-                                
-                            </div>
-                            <div class="project-links">
-                            
-                                <a href="https://github.com/KanchanaAriyasinghe/currency_app" class="btn-secondary" target="_blank">GitHub</a>
+                    <!-- PROJECT 5 -->
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/project3.png" alt="Currency Converter">
+                            <div class="project-overlay">
+                                <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="overlay-btn"><i class="fab fa-github"></i></a>
                             </div>
                         </div>
-                    </div>
-
-                      <div class="project-card">
-                        <img src="assets/project5.png" alt="Project 5 Screenshot">
-                        <div class="project-info">
-                            <h3>Student Feedback Management System      </h3>
-                            <p>Built a Student Feedback Management System to collect and manage course and lecturer feedback within the faculty. </p>
+                        <div class="project-body">
                             <div class="project-tags">
-                                <span>PHP</span>
-                                <span>HTML/CSS</span>
-                                <span>MySQL</span>
+                                <span>React</span><span>Node.js</span><span>Exchange Rates API</span>
                             </div>
+                            <h3>Smart Currency Converter</h3>
+                            <p>Convert currencies using real-time and historical exchange rate data with a clean, intuitive interface.</p>
                             <div class="project-links">
-                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEu80i8BfzsxgDSrTgdOV61CZZQ-xcp4laU" class="btn" target="_blank">Live Demo</a>
-                               
+                                <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="btn-secondary btn-sm"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <!-- PROJECT 1 -->
-                    <div class="project-card">
-                        <img src="assets/project6.png" alt="Project 6 Screenshot">
-                        <div class="project-info">
+                    <!-- PROJECT 6 -->
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/project5.png" alt="Student Feedback System">
+                            <div class="project-overlay">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="overlay-btn"><i class="fas fa-external-link-alt"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span>PHP</span><span>MySQL</span><span>HTML/CSS</span>
+                            </div>
+                            <h3>Student Feedback Management</h3>
+                            <p>System to collect and manage course and lecturer feedback within the faculty with admin reporting.</p>
+                            <div class="project-links">
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="btn btn-sm"><i class="fas fa-external-link-alt"></i> Demo</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PROJECT 7 -->
+                    <article class="project-card">
+                        <div class="project-thumb">
+                            <img src="assets/project6.png" alt="Food Recipe App">
+                            <div class="project-overlay">
+                                <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="overlay-btn"><i class="fab fa-github"></i></a>
+                            </div>
+                        </div>
+                        <div class="project-body">
+                            <div class="project-tags">
+                                <span>React</span><span>Node.js</span><span>JavaScript</span>
+                            </div>
                             <h3>Food Recipe App</h3>
-                            <p>The Food Recipe App is a platform that allows users to discover, create, and share a wide variety of recipes.</p>
-                            <div class="project-tags">
-                                <span>React</span>
-                                <span>Node.js</span>
-                                <span>Thunder Client</span>
-                                <span>HTML</span>
-                                <span>CSS</span>
-                                <span>JavaScript</span>
-                            </div>
+                            <p>Platform for discovering, creating, and sharing recipes with a full-stack React and Node.js architecture.</p>
                             <div class="project-links">
-                            
-                                <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" class="btn-secondary" target="_blank">GitHub</a>
+                                <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="btn-secondary btn-sm"><i class="fab fa-github"></i> Code</a>
                             </div>
                         </div>
-                    </div>
-
-                    <!-- PROJECT 1 -->
-                    <div class="project-card">
-                        <img src="assets/project7.png" alt="Project 7 Screenshot">
-                        <div class="project-info">
-                            <h3>Research AI</h3>
-                            <p>An intelligent chatbot application that solves a critical challenge faced by researchers: finding relevant research papers and datasets. This tool combines PDF analysis, academic paper discovery, and conversational AI to provide a comprehensive research assistant experience.</p>
-                            <div class="project-tags">
-                                <span>Python</span>
-                                <span>Flask</span>
-                                <span>HTML5</span>
-                                <span>CSS3</span>
-                                <span>JavaScript</span>
-                                <span>Groq API</span>
-                                <span>arXiv</span>
-                                <span>CrossRef</span>
-                                <span>Hugging Face Datasets</span>
-                            </div>
-                            <div class="project-links">
-                            
-                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_ai-machinelearning-nlp-activity-7395024416532955136--301?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEu80i8BfzsxgDSrTgdOV61CZZQ-xcp4laU" class="btn" target="_blank">Live Demo</a>
-                                <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" class="btn-secondary" target="_blank">GitHub</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- ADD MORE PROJECTS AS NEEDED -->
+                    </article>
 
                 </div>
             </div>
@@ -175,10 +188,19 @@ reminders. Enabled real-time scheduling via a web interface, with cloud data man
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Kanchana Ariyasinghe. All Rights Reserved.</p>
+        <div class="container footer-inner">
+            <span class="footer-logo">KA<span>.</span></span>
+            <p>&copy; 2025 Kanchana Ariyasinghe. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/KanchanaAriyasinghe" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/main.js"></script>
 </body>

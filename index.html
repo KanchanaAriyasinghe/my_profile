@@ -3,115 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanchana Ariyasinghe - Personal Portfolio</title>
+    <title>Kanchana Ariyasinghe — Computer Engineering</title>
     <link rel="stylesheet" href="css/style.css">
-    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 </head>
 <body>
 
+    <!-- NAV -->
     <header class="header">
         <div class="container">
-            <a href="index.html" class="logo">Kanchana Ariyasinghe | Computer Engineering | UOJ</a>
-            <nav class="navbar">
+            <a href="index.html" class="logo">Kanchana Ariyasinghe | Computer Engineering | UOJ<span>.</span></a>
+            <nav class="navbar" id="navbar">
                 <ul class="nav-list">
                     <li><a href="index.html" class="active">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="research.html">Research</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
     <main>
-        <!-- HERO / ABOUT SECTION -->
+
+        <!-- HERO -->
         <section class="hero">
             <div class="container hero-container">
                 <div class="hero-text">
-                    <h1>Hi, I'm Kanchana Ariyasinghe</h1>
-                    <p class="subtitle">Software Developer / ML</p>
-                    <p>
-                        <!-- Write a short, engaging paragraph about yourself here. -->
-                        An enthusiastic final-year Computer Engineering student with skills in programming, problem-solving, and system 
-design. Always adept at exploring new technologies and applying them to innovative solutions. 
-                    </p>
-                    <div class="social-links">
-                        <a href="www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/KanchanaAriyasinghe" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+                    <div class="hero-badge">
+                        <span class="dot"></span>
+                        Available for opportunities
                     </div>
-                    <a href="assets/my-cv.pdf" class="btn" download>Download CV</a>
+                    <h1>Hi, I'm <br><span class="gradient-text">Kanchana<br>Ariyasinghe</span></h1>
+                    <p class="subtitle">Software Engineer &amp; ML Engineer</p>
+                    <p>Final-year Computer Engineering student at University of Jaffna with a passion for building intelligent systems and scalable web applications. I thrive at the intersection of software engineering and machine learning.</p>
+                    <div class="social-links">
+                        <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" title="LinkedIn" aria-label="LinkedIn">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="https://github.com/KanchanaAriyasinghe" target="_blank" title="GitHub" aria-label="GitHub">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </div>
+                    <div class="hero-cta">
+                        <a href="assets/Kanchana Aariyasinghe CV.pdf" class="btn" download>
+                            <i class="fas fa-download"></i> Download CV
+                        </a>
+                        <a href="assets/Kanchana Aariyasinghe CV.pdf" class="btn-secondary" target="_blank">
+                            <i class="fas fa-eye"></i> View CV
+                        </a>
+                        <a href="research.html" class="btn-secondary">View Research</a>
+                    </div>
                 </div>
                 <div class="hero-image">
-                    <!-- Make sure you have a 'profile-pic.jpg' in the 'assets' folder -->
-                    <img src="assets/profile-pic.jpg" alt="A photo of Your Name">
+                    <div class="img-ring">
+                        <img src="assets/profile-pic.jpeg" alt="Kanchana Ariyasinghe">
+                    </div>
+                    <div class="hero-stat-cards">
+                        <div class="stat-card">
+                            <span class="stat-num">7+</span>
+                            <span class="stat-lbl">Projects</span>
+                        </div>
+                        <div class="stat-card">
+                            <span class="stat-num">90%</span>
+                            <span class="stat-lbl">ML Accuracy</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- SKILLS SECTION -->
-        <section class="skills section">
+        <!-- SKILLS -->
+        <section class="section" id="skills">
             <div class="container">
-                <h2 class="section-title">My Skills</h2>
+                <div class="section-header">
+                    <h2 class="section-title">Technical Skills</h2>
+                    <p class="section-sub">Technologies I work with</p>
+                </div>
                 <div class="skills-grid">
-                    <div class="skill-category">
-                        <h3>Programming Languages</h3>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-code"></i></div>
+                        <h3>Languages</h3>
                         <ul>
                             <li>JavaScript</li>
                             <li>Python</li>
-                            <li>HTML & CSS</li>
                             <li>C++</li>
-                            <li>SQL</li>
                         </ul>
                     </div>
-                    <div class="skill-category">
-                        <h3>Frameworks & Libraries</h3>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+                        <h3>Frameworks</h3>
                         <ul>
-                            <li>React & Node.js</li>
-                            <li>React-Native</li>
-                            <li>TensorFlow & PyTorch</li>
-                            
+                            <li>React &amp; Node.js</li>
+                            <li>React Native</li>
+                            <li>TensorFlow</li>
+                            <li>PyTorch</li>
+                            <li>Spring Boot</li>
+                            <li>Next.js</li>
                         </ul>
                     </div>
-                    <div class="skill-category">
-                        <h3>Tools & Platforms</h3>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-database"></i></div>
+                        <h3>Databases</h3>
                         <ul>
-                            <li>Git & GitHub</li>
-                            <li>Jira</li>
-                           
+                            <li>MYSQL</li>
+                            <li>RMongoDB</li>
                             <li>PostgreSQL</li>
+                        </ul>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-icon"><i class="fas fa-tools"></i></div>
+                        <h3>Tools</h3>
+                        <ul>
+                            <li>Git &amp; GitHub</li>
+                            <li>Jira</li>
+                            <li>BitBucket</li>
+                           
                         </ul>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- COURSES & ACHIEVEMENTS SECTION -->
-        <section class="section alt-bg">
+        <!-- WORK EXPERIENCE -->
+<section class="section" id="experience">
+    <div class="container">
+        <div class="section-header">
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-sub">Where I've built real-world systems</p>
+        </div>
+        <div class="timeline">
+            <div class="exp-card">
+                <div class="timeline-dot"></div>
+                <div class="exp-header">
+                    <div>
+                        <div class="exp-role">Software Engineer Intern</div>
+                        <div class="exp-company">Sri Lanka Telecom</div>
+                    </div>
+                    <div class="exp-meta">
+                        <span class="exp-duration">
+                            <span class="dot"></span> Present
+                        </span>
+                        <span class="exp-date">November 2025 – Present &nbsp;·&nbsp; 6 months</span>
+                    </div>
+                </div>
+                <hr class="exp-divider">
+                <ul class="exp-bullets">
+                    <li>Working as a full stack developer on the <strong>Business Continuity Management System (BCMS)</strong> using the <strong>MERN stack</strong> (MongoDB, Express.js, React, Node.js).</li>
+                    <li>Designing and implementing a <strong>Learning Path Management System (LPMS)</strong> for the HR Talent Development section using the <strong>PERN stack</strong> (PostgreSQL, Express.js, React, Node.js).</li>
+                </ul>
+                <div class="stack-tags">
+                    <span class="project-tags"><span>MongoDB</span></span>
+                    <span class="project-tags"><span>PostgreSQL</span></span>
+                    <span class="project-tags"><span>Express.js</span></span>
+                    <span class="project-tags"><span>React</span></span>
+                    <span class="project-tags"><span>Node.js</span></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+        <!-- COURSES & VOLUNTEERING -->
+        <section class="section section-alt" id="extras">
             <div class="container">
-                 <div class="courses-achievements-grid">
-                    <div class="courses">
-                        <h2 class="section-title">Courses & Certifications</h2>
-                        <ul>
-                           <!-- Add your courses here -->
-                           <li><a href="[https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_codsoft-javaprogramming-certificate-activity-7261024337569148928-Da7w?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEu80i8BfzsxgDSrTgdOV61CZZQ-xcp4laU]" target="_blank">Java Programming Internship (One month)</a> - Codesoft</li>
-                           <li><a href="[https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_algoxplore-ctfchallenges-teamwork-activity-7281009431574638592-cqr5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEu80i8BfzsxgDSrTgdOV61CZZQ-xcp4laU]" target="_blank"> AlgoXplore 1.0 Algorithm and Capture the Flag (CTF) Challenge</a> - NSBM</li>
-                           <li><a href="[https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_moraxtreme-ieee-universityofmoratuwa-activity-7261020108511236096-aozi?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEu80i8BfzsxgDSrTgdOV61CZZQ-xcp4laU]" target="_blank">MoraXtreme 9.0, a 12-hour coding marathon</a> - IEEE UOM </li>
-                
-                           <li><a href="[Link to Certificate]" target="_blank"> TECHNOVATION 2025 | SLT-MOBITEL – AI Innovation Challenge</a> - Finalist</li>
+                <div class="two-col-grid">
+
+                    <div class="info-block">
+                        <div class="block-label">
+                            <i class="fas fa-certificate"></i> Courses &amp; Certifications
+                        </div>
+                        <ul class="check-list">
+                            <li>
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_codsoft-javaprogramming-certificate-activity-7261024337569148928-Da7w" target="_blank">
+                                    Java Programming Internship
+                                </a>
+                                <span class="tag-pill">Codesoft</span>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_algoxplore-ctfchallenges-teamwork-activity-7281009431574638592-cqr5" target="_blank">
+                                    AlgoXplore 1.0 — Algorithm &amp; CTF Challenge
+                                </a>
+                                <span class="tag-pill">NSBM</span>
+                            </li>
+                            <li>
+                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_moraxtreme-ieee-universityofmoratuwa-activity-7261020108511236096-aozi" target="_blank">
+                                    MoraXtreme 9.0 — 12h Coding Marathon
+                                </a>
+                                <span class="tag-pill">IEEE UOM</span>
+                            </li>
+                            <li>
+                                TECHNOVATION 2025 — AI Innovation Challenge
+                                <span class="tag-pill accent">Finalist</span>
+                            </li>
                         </ul>
                     </div>
-                    <div class="achievements">
-                        <h2 class="section-title">Volunteering</h2>
-                        <ul>
-                            <!-- Add your achievements here -->
-                            <li>IESL Student Chapter - University of Jaffna         Membership Number: S-29763  </li>
-                            <li>IEEE Student Member  (100411452) </li>
-                            
+
+                    <div class="info-block">
+                        <div class="block-label">
+                            <i class="fas fa-hands-helping"></i> Volunteering
+                        </div>
+                        <ul class="check-list">
+                            <li>
+                                IESL Student Chapter — University of Jaffna
+                                <span class="tag-pill">S-29763</span>
+                            </li>
+                            <li>
+                                IEEE Student Member
+                                <span class="tag-pill">100411452</span>
+                            </li>
                         </ul>
                     </div>
+
                 </div>
             </div>
         </section>
@@ -119,10 +224,19 @@ design. Always adept at exploring new technologies and applying them to innovati
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Kanchana Ariyasinghe. All Rights Reserved.</p>
+        <div class="container footer-inner">
+            <span class="footer-logo">Kanchana Ariyasinghe | Computer Engineering | UOJ<span>.</span></span>
+            <p>&copy; 2025 Kanchana Ariyasinghe. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/KanchanaAriyasinghe" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </footer>
+
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
     <script src="js/main.js"></script>
 </body>

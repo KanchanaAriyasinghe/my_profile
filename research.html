@@ -3,267 +3,209 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Research - Kanchana Ariyasinghe</title>
+    <title>Research — Kanchana Ariyasinghe</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    <style>
-        /* Video Container Styles */
-        .video-container {
-            margin: 40px 0;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 8px 30px rgba(0,0,0,0.3);
-            background: var(--bg-color-alt);
-            border: 1px solid var(--border-color);
-        }
-
-        .video-wrapper {
-            position: relative;
-            width: 100%;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
-            height: 0;
-            overflow: hidden;
-        }
-
-        .video-wrapper video {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            border-radius: 12px;
-        }
-
-        .video-controls {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 15px 20px;
-            background: rgba(27, 38, 59, 0.8);
-            backdrop-filter: blur(10px);
-            border-top: 1px solid var(--border-color);
-        }
-
-        .video-title {
-            font-size: 1.1rem;
-            font-weight: 600;
-            color: var(--primary-color);
-        }
-
-        .video-actions {
-            display: flex;
-            gap: 12px;
-        }
-
-        .video-btn {
-            padding: 8px 16px;
-            background: rgba(0, 163, 255, 0.1);
-            border: 1px solid var(--primary-color);
-            border-radius: 6px;
-            color: var(--primary-color);
-            cursor: pointer;
-            font-size: 0.9rem;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .video-btn:hover {
-            background: var(--primary-color);
-            color: var(--bg-color);
-            transform: translateY(-2px);
-        }
-
-        .video-description {
-            padding: 20px;
-            color: var(--secondary-color);
-            line-height: 1.7;
-        }
-
-        .video-description h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-            font-size: 1.1rem;
-        }
-
-        .video-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 15px;
-        }
-
-        .video-tag {
-            background: rgba(0, 163, 255, 0.1);
-            color: var(--primary-color);
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            border: 1px solid var(--primary-color);
-        }
-
-        /* Responsive Design */
-        @media (max-width: 768px) {
-            .video-controls {
-                flex-direction: column;
-                gap: 12px;
-            }
-
-            .video-actions {
-                width: 100%;
-                justify-content: flex-start;
-            }
-
-            .video-btn {
-                flex: 1;
-                justify-content: center;
-            }
-        }
-    </style>
 </head>
 <body>
 
     <header class="header">
         <div class="container">
-            <a href="index.html" class="logo">Kanchana Ariyasinghe | Computer Engineering | UOJ</a>
-            <nav class="navbar">
+            <a href="index.html" class="logo">KA<span>.</span></a>
+            <nav class="navbar" id="navbar">
                 <ul class="nav-list">
                     <li><a href="index.html">About</a></li>
                     <li><a href="projects.html">Projects</a></li>
                     <li><a href="research.html" class="active">Research</a></li>
                 </ul>
             </nav>
-            <button class="hamburger" id="hamburger">
-                <i class="fas fa-bars"></i>
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+                <span></span><span></span><span></span>
             </button>
         </div>
     </header>
 
     <main>
-        <section class="section">
+        <section class="section page-hero">
             <div class="container">
-                <h1 class="page-title">My Research</h1>
+                <div class="page-hero-text">
+                    <div class="block-label"><i class="fas fa-flask"></i> Academic Work</div>
+                    <h1 class="page-title">My <span class="gradient-text">Research</span></h1>
+                    <p class="page-subtitle">Exploring machine learning and computer vision to solve real-world infrastructure problems.</p>
+                </div>
 
-                <div class="research-list">
-                    <!-- RESEARCH ITEM 1 -->
-                    <div class="research-item">
-                        <h3>Potholes Detection using Advanced Object Detection Techniques (Ongoing)</h3>
-                        <p class="research-abstract">
-                            <strong>Abstract:</strong> Developed a real-time pothole detection system using an ensemble of YOLOv8m and MobileNetV2 models, 
-achieving 90.3% accuracy across challenging conditions like low-light, rain, and cluttered environments. Integrated 
-advanced preprocessing (CycleGAN, CLAHE), model optimization and edge deployment for scalable 
-smart road monitoring.
-                        </p>
-
-                        <!-- VIDEO SECTION -->
-                        <div class="video-container">
-                            <div class="video-wrapper">
-                                <video id="researchVideo" controls>
-                                    <source src="assets/Media1.mp4" type="video/mp4">
-                                    Your browser does not support the video tag.
-                                </video>
-                            </div>
-                            <div class="video-controls">
-                                <span class="video-title">Pothole Detection System Demo</span>
-                                <div class="video-actions">
-                                    <button class="video-btn" id="playPauseBtn">
-                                        <i class="fas fa-play"></i> Play
-                                    </button>
-                                    <button class="video-btn" id="fullscreenBtn">
-                                        <i class="fas fa-expand"></i> Fullscreen
-                                    </button>
-                                    <button class="video-btn" id="downloadBtn">
-                                        <i class="fas fa-download"></i> Download
-                                    </button>
-                                </div>
-                            </div>
-                            <div class="video-description">
-                                <h4>Video Overview</h4>
-                                <p>This video demonstrates the real-time pothole detection system in action. You can see how the ensemble model (YOLOv8m + MobileNetV2) identifies and highlights potholes with high accuracy even under challenging conditions such as poor lighting and wet roads.</p>
-                                <div class="video-tags">
-                                    <span class="video-tag">YOLOv8m</span>
-                                    <span class="video-tag">MobileNetV2</span>
-                                    <span class="video-tag">Computer Vision</span>
-                                    <span class="video-tag">Real-time Detection</span>
-                                    <span class="video-tag">Deep Learning</span>
-                                </div>
-                            </div>
+                <!-- RESEARCH CARD -->
+                <div class="research-card">
+                    <div class="research-card-header">
+                        <span class="status-badge">
+                            <span class="pulse"></span> Ongoing
+                        </span>
+                        <div class="research-tech-stack">
+                            <span>YOLOv8m</span>
+                            <span>MobileNetV2</span>
+                            <span>CycleGAN</span>
+                            <span>CLAHE</span>
+                            <span>Deep Learning</span>
                         </div>
                     </div>
 
-                    <!-- RESEARCH ITEM 2 (UNCOMMENT TO ADD MORE) -->
-                    <!-- <div class="research-item">
-                        <h3>Research Title Here</h3>
-                        <p class="research-meta">Published in <strong>[Journal or Conference Name]</strong>, [Year]</p>
-                        <p class="research-authors"><strong>Authors:</strong> [Your Name], [Co-author 1], [Co-author 2]</p>
-                        <p class="research-abstract">
-                            <strong>Abstract:</strong> Write a concise summary of your research here.
-                        </p>
-                        <a href="[Link to PDF or DOI]" class="btn" target="_blank">Read Paper</a>
-                    </div> -->
+                    <h2 class="research-title">Potholes Detection using Advanced Object Detection Techniques</h2>
+
+                    <div class="research-stats">
+                        <div class="r-stat">
+                            <span class="r-stat-num">90.3%</span>
+                            <span class="r-stat-lbl">Model Accuracy</span>
+                        </div>
+                        <div class="r-stat">
+                            <span class="r-stat-num">2</span>
+                            <span class="r-stat-lbl">Model Ensemble</span>
+                        </div>
+                        <div class="r-stat">
+                            <span class="r-stat-num">Real-time</span>
+                            <span class="r-stat-lbl">Detection Speed</span>
+                        </div>
+                    </div>
+
+                    <div class="research-abstract">
+                        <h4><i class="fas fa-align-left"></i> Abstract</h4>
+                        <p>Developed a real-time pothole detection system using an ensemble of YOLOv8m and MobileNetV2 models, achieving 90.3% accuracy across challenging conditions including low-light, rain, and cluttered environments. Integrated advanced preprocessing techniques (CycleGAN for domain adaptation, CLAHE for contrast enhancement), model optimization, and edge deployment for scalable smart road monitoring.</p>
+                    </div>
+
+                    <!-- VIDEO SECTION -->
+                    <div class="video-section">
+                        <h4 class="video-heading"><i class="fas fa-play-circle"></i> Demo Video</h4>
+                        <div class="video-player">
+                            <div class="video-wrapper">
+                                <video id="researchVideo" preload="metadata">
+                                    <source src="assets/Media1.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                                <!-- Custom overlay play button -->
+                                <div class="video-overlay" id="videoOverlay">
+                                    <button class="big-play-btn" id="bigPlayBtn" aria-label="Play video">
+                                        <i class="fas fa-play"></i>
+                                    </button>
+                                </div>
+                            </div>
+
+                            <!-- Custom Controls Bar -->
+                            <div class="video-controls-bar">
+                                <div class="vc-left">
+                                    <button class="vc-btn" id="playPauseBtn" aria-label="Play/Pause">
+                                        <i class="fas fa-play" id="playIcon"></i>
+                                    </button>
+                                    <span class="vc-time" id="currentTime">0:00</span>
+                                    <span class="vc-sep">/</span>
+                                    <span class="vc-time" id="duration">0:00</span>
+                                </div>
+                                <div class="vc-progress" id="progressBar">
+                                    <div class="vc-progress-fill" id="progressFill"></div>
+                                </div>
+                                <div class="vc-right">
+                                    <button class="vc-btn" id="muteBtn" aria-label="Mute">
+                                        <i class="fas fa-volume-up" id="volIcon"></i>
+                                    </button>
+                                    <button class="vc-btn" id="fullscreenBtn" aria-label="Fullscreen">
+                                        <i class="fas fa-expand"></i>
+                                    </button>
+                                    <a href="assets/Media1.mp4" download class="vc-btn" aria-label="Download">
+                                        <i class="fas fa-download"></i>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <p class="video-caption">The demo shows the YOLOv8m + MobileNetV2 ensemble detecting potholes in real-time under low-light and wet-road conditions.</p>
+                    </div>
 
                 </div>
+                <!-- end research-card -->
+
             </div>
         </section>
     </main>
 
     <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Kanchana Ariyasinghe. All Rights Reserved.</p>
+        <div class="container footer-inner">
+            <span class="footer-logo">KA<span>.</span></span>
+            <p>&copy; 2025 Kanchana Ariyasinghe. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/KanchanaAriyasinghe" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+            </div>
         </div>
     </footer>
 
+    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
     <script src="js/main.js"></script>
     <script>
-        // Video Controls JavaScript
-        const video = document.getElementById('researchVideo');
-        const playPauseBtn = document.getElementById('playPauseBtn');
-        const fullscreenBtn = document.getElementById('fullscreenBtn');
-        const downloadBtn = document.getElementById('downloadBtn');
+        // ── Custom Video Player ──────────────────────────────────────
+        const video       = document.getElementById('researchVideo');
+        const overlay     = document.getElementById('videoOverlay');
+        const bigPlayBtn  = document.getElementById('bigPlayBtn');
+        const playPauseBtn= document.getElementById('playPauseBtn');
+        const playIcon    = document.getElementById('playIcon');
+        const muteBtn     = document.getElementById('muteBtn');
+        const volIcon     = document.getElementById('volIcon');
+        const fullscreenBtn= document.getElementById('fullscreenBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressFill= document.getElementById('progressFill');
+        const currentTimeEl= document.getElementById('currentTime');
+        const durationEl  = document.getElementById('duration');
 
-        // Play/Pause Button
-        playPauseBtn.addEventListener('click', function() {
-            if (video.paused) {
-                video.play();
-                playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
-            } else {
-                video.pause();
-                playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
-            }
+        function formatTime(s) {
+            const m = Math.floor(s / 60);
+            const sec = Math.floor(s % 60).toString().padStart(2, '0');
+            return `${m}:${sec}`;
+        }
+
+        function togglePlay() {
+            if (video.paused) { video.play(); } else { video.pause(); }
+        }
+
+        video.addEventListener('play', () => {
+            overlay.style.opacity = '0';
+            overlay.style.pointerEvents = 'none';
+            playIcon.className = 'fas fa-pause';
         });
 
-        // Update button text when video plays/pauses
-        video.addEventListener('play', function() {
-            playPauseBtn.innerHTML = '<i class="fas fa-pause"></i> Pause';
+        video.addEventListener('pause', () => {
+            overlay.style.opacity = '1';
+            overlay.style.pointerEvents = 'auto';
+            playIcon.className = 'fas fa-play';
         });
 
-        video.addEventListener('pause', function() {
-            playPauseBtn.innerHTML = '<i class="fas fa-play"></i> Play';
+        video.addEventListener('timeupdate', () => {
+            const pct = video.duration ? (video.currentTime / video.duration) * 100 : 0;
+            progressFill.style.width = pct + '%';
+            currentTimeEl.textContent = formatTime(video.currentTime);
         });
 
-        // Fullscreen Button
-        fullscreenBtn.addEventListener('click', function() {
-            if (video.requestFullscreen) {
-                video.requestFullscreen();
-            } else if (video.webkitRequestFullscreen) {
-                video.webkitRequestFullscreen();
-            } else if (video.mozRequestFullScreen) {
-                video.mozRequestFullScreen();
-            } else if (video.msRequestFullscreen) {
-                video.msRequestFullscreen();
-            }
+        video.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(video.duration);
         });
 
-        // Download Button
-        downloadBtn.addEventListener('click', function() {
-            const link = document.createElement('a');
-            link.href = 'videos/pothole-detection-demo.mp4';
-            link.download = 'pothole-detection-demo.mp4';
-            document.body.appendChild(link);
-            link.click();
-            document.body.removeChild(link);
+        bigPlayBtn.addEventListener('click', togglePlay);
+        playPauseBtn.addEventListener('click', togglePlay);
+
+        muteBtn.addEventListener('click', () => {
+            video.muted = !video.muted;
+            volIcon.className = video.muted ? 'fas fa-volume-mute' : 'fas fa-volume-up';
+        });
+
+        fullscreenBtn.addEventListener('click', () => {
+            const el = video.requestFullscreen ? video : document.querySelector('.video-player');
+            if (el.requestFullscreen) el.requestFullscreen();
+            else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+        });
+
+        progressBar.addEventListener('click', (e) => {
+            const rect = progressBar.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            video.currentTime = pct * video.duration;
         });
     </script>
 </body>
