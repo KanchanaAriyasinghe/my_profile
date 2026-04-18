@@ -1,243 +1,693 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kanchana Ariyasinghe — Computer Engineering</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kanchana Ariyasinghe — Software &amp; ML Engineer</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <!-- EmailJS — required for the contact form to send real emails -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+  <!-- Inline SVG sprite — no external icon dependency -->
+  <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
+    <!-- nav / misc -->
+    <symbol id="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
+    <symbol id="ico-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
+    <symbol id="ico-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></symbol>
+    <symbol id="ico-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
+    <symbol id="ico-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
+    <symbol id="ico-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
+    <symbol id="ico-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
+    <symbol id="ico-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></symbol>
+
+    <!-- skill section icons -->
+    <symbol id="ico-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
+    <symbol id="ico-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
+    <symbol id="ico-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+    <symbol id="ico-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
+
+    <!-- social icons -->
+    <symbol id="ico-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
+    <symbol id="ico-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
+    <symbol id="ico-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
+    <symbol id="ico-github" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
+    <symbol id="ico-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
+    <symbol id="ico-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
+    <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67 A2 2 0 0 1 4.11 2h3 a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91 a16 16 0 0 0 6 6 l1.27-1.27 a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 A2 2 0 0 1 22 16.92z"/></symbol>
+
+    <!-- experience / misc -->
+    <symbol id="ico-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
+    <symbol id="ico-cert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></symbol>
+    <symbol id="ico-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
+    <symbol id="ico-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></symbol>
+    <symbol id="ico-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></symbol>
+    <symbol id="ico-volume" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><path d="M19.07 4.93a10 10 0 0 1 0 14.14"/><path d="M15.54 8.46a5 5 0 0 1 0 7.07"/></symbol>
+    <symbol id="ico-mute" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"/><line x1="23" y1="9" x2="17" y2="15"/><line x1="17" y1="9" x2="23" y2="15"/></symbol>
+    <symbol id="ico-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></symbol>
+    <symbol id="ico-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></symbol>
+    <symbol id="ico-play-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></symbol>
+  </svg>
 </head>
 <body>
 
-    <!-- NAV -->
-    <header class="header">
-        <div class="container">
-            <a href="index.html" class="logo">Kanchana Ariyasinghe | Computer Engineering | UOJ<span>.</span></a>
-            <nav class="navbar" id="navbar">
-                <ul class="nav-list">
-                    <li><a href="index.html" class="active">About</a></li>
-                    <li><a href="projects.html">Projects</a></li>
-                    <li><a href="research.html">Research</a></li>
-                </ul>
-            </nav>
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </header>
+  <!-- ══════════════════════════════════════════════
+       HEADER / NAV
+  ══════════════════════════════════════════════ -->
+  <header class="header" id="header">
+    <div class="container nav-inner">
+      <a href="#home" class="logo">Kanchana<span>.</span></a>
 
-    <main>
+      <nav class="navbar" id="navbar">
+        <ul class="nav-list">
+          <li><a href="#home"     class="nav-link active">Home</a></li>
+          <li><a href="#about"    class="nav-link">About</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#research" class="nav-link">Research</a></li>
+          <li><a href="#contact"  class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
 
-        <!-- HERO -->
-        <section class="hero">
-            <div class="container hero-container">
-                <div class="hero-text">
-                    <div class="hero-badge">
-                        <span class="dot"></span>
-                        Available for opportunities
-                    </div>
-                    <h1>Hi, I'm <br><span class="gradient-text">Kanchana<br>Ariyasinghe</span></h1>
-                    <p class="subtitle">Software Engineer &amp; ML Engineer</p>
-                    <p>Final-year Computer Engineering student at University of Jaffna with a passion for building intelligent systems and scalable web applications. I thrive at the intersection of software engineering and machine learning.</p>
-                    <div class="social-links">
-                        <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" title="LinkedIn" aria-label="LinkedIn">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                        <a href="https://github.com/KanchanaAriyasinghe" target="_blank" title="GitHub" aria-label="GitHub">
-                            <i class="fab fa-github"></i>
-                        </a>
-                    </div>
-                    <div class="hero-cta">
-                        <a href="assets/Kanchana Aariyasinghe CV.pdf" class="btn" download>
-                            <i class="fas fa-download"></i> Download CV
-                        </a>
-                        <a href="assets/Kanchana Aariyasinghe CV.pdf" class="btn-secondary" target="_blank">
-                            <i class="fas fa-eye"></i> View CV
-                        </a>
-                        <a href="research.html" class="btn-secondary">View Research</a>
-                    </div>
-                </div>
-                <div class="hero-image">
-                    <div class="img-ring">
-                        <img src="assets/profile-pic.jpeg" alt="Kanchana Ariyasinghe">
-                    </div>
-                    <div class="hero-stat-cards">
-                        <div class="stat-card">
-                            <span class="stat-num">7+</span>
-                            <span class="stat-lbl">Projects</span>
-                        </div>
-                        <div class="stat-card">
-                            <span class="stat-num">90%</span>
-                            <span class="stat-lbl">ML Accuracy</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+      <a href="#contact" class="btn-talk scroll-link">Let's Talk</a>
 
-        <!-- SKILLS -->
-        <section class="section" id="skills">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">Technical Skills</h2>
-                    <p class="section-sub">Technologies I work with</p>
-                </div>
-                <div class="skills-grid">
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-code"></i></div>
-                        <h3>Languages</h3>
-                        <ul>
-                            <li>JavaScript</li>
-                            <li>Python</li>
-                            <li>C++</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
-                        <h3>Frameworks</h3>
-                        <ul>
-                            <li>React &amp; Node.js</li>
-                            <li>React Native</li>
-                            <li>TensorFlow</li>
-                            <li>PyTorch</li>
-                            <li>Spring Boot</li>
-                            <li>Next.js</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-database"></i></div>
-                        <h3>Databases</h3>
-                        <ul>
-                            <li>MYSQL</li>
-                            <li>RMongoDB</li>
-                            <li>PostgreSQL</li>
-                        </ul>
-                    </div>
-                    <div class="skill-card">
-                        <div class="skill-icon"><i class="fas fa-tools"></i></div>
-                        <h3>Tools</h3>
-                        <ul>
-                            <li>Git &amp; GitHub</li>
-                            <li>Jira</li>
-                            <li>BitBucket</li>
-                           
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- WORK EXPERIENCE -->
-<section class="section" id="experience">
-    <div class="container">
-        <div class="section-header">
-            <h2 class="section-title">Work Experience</h2>
-            <p class="section-sub">Where I've built real-world systems</p>
-        </div>
-        <div class="timeline">
-            <div class="exp-card">
-                <div class="timeline-dot"></div>
-                <div class="exp-header">
-                    <div>
-                        <div class="exp-role">Software Engineer Intern</div>
-                        <div class="exp-company">Sri Lanka Telecom</div>
-                    </div>
-                    <div class="exp-meta">
-                        <span class="exp-duration">
-                            <span class="dot"></span> Present
-                        </span>
-                        <span class="exp-date">November 2025 – Present &nbsp;·&nbsp; 6 months</span>
-                    </div>
-                </div>
-                <hr class="exp-divider">
-                <ul class="exp-bullets">
-                    <li>Working as a full stack developer on the <strong>Business Continuity Management System (BCMS)</strong> using the <strong>MERN stack</strong> (MongoDB, Express.js, React, Node.js).</li>
-                    <li>Designing and implementing a <strong>Learning Path Management System (LPMS)</strong> for the HR Talent Development section using the <strong>PERN stack</strong> (PostgreSQL, Express.js, React, Node.js).</li>
-                </ul>
-                <div class="stack-tags">
-                    <span class="project-tags"><span>MongoDB</span></span>
-                    <span class="project-tags"><span>PostgreSQL</span></span>
-                    <span class="project-tags"><span>Express.js</span></span>
-                    <span class="project-tags"><span>React</span></span>
-                    <span class="project-tags"><span>Node.js</span></span>
-                </div>
-            </div>
-        </div>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-</section>
+  </header>
 
-        <!-- COURSES & VOLUNTEERING -->
-        <section class="section section-alt" id="extras">
-            <div class="container">
-                <div class="two-col-grid">
 
-                    <div class="info-block">
-                        <div class="block-label">
-                            <i class="fas fa-certificate"></i> Courses &amp; Certifications
-                        </div>
-                        <ul class="check-list">
-                            <li>
-                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_codsoft-javaprogramming-certificate-activity-7261024337569148928-Da7w" target="_blank">
-                                    Java Programming Internship
-                                </a>
-                                <span class="tag-pill">Codesoft</span>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_algoxplore-ctfchallenges-teamwork-activity-7281009431574638592-cqr5" target="_blank">
-                                    AlgoXplore 1.0 — Algorithm &amp; CTF Challenge
-                                </a>
-                                <span class="tag-pill">NSBM</span>
-                            </li>
-                            <li>
-                                <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_moraxtreme-ieee-universityofmoratuwa-activity-7261020108511236096-aozi" target="_blank">
-                                    MoraXtreme 9.0 — 12h Coding Marathon
-                                </a>
-                                <span class="tag-pill">IEEE UOM</span>
-                            </li>
-                            <li>
-                                TECHNOVATION 2025 — AI Innovation Challenge
-                                <span class="tag-pill accent">Finalist</span>
-                            </li>
-                        </ul>
-                    </div>
+  <!-- ══════════════════════════════════════════════
+       HERO
+  ══════════════════════════════════════════════ -->
+  <section id="home" class="hero-section">
+    <div class="hero-inner container">
 
-                    <div class="info-block">
-                        <div class="block-label">
-                            <i class="fas fa-hands-helping"></i> Volunteering
-                        </div>
-                        <ul class="check-list">
-                            <li>
-                                IESL Student Chapter — University of Jaffna
-                                <span class="tag-pill">S-29763</span>
-                            </li>
-                            <li>
-                                IEEE Student Member
-                                <span class="tag-pill">100411452</span>
-                            </li>
-                        </ul>
-                    </div>
+      <!-- Left text -->
+      <div class="hero-text">
+        <h3 class="hero-greeting">Hi, I'm</h3>
 
-                </div>
-            </div>
-        </section>
+        <h1 class="hero-role">
+          Kanchana Ariyasinghe<br>
+        </h1>
+        <h1 class="hero-role">
+          Undergraduate | <span class="accent">Computer Engineering</span> | UOJ<br>
+        </h1>
+        
 
-    </main>
+        <h2 class="hero-name"><span class="accent">SOFTWARE</span> &amp; <span class="accent">ML </span>ENGINEER</h2>
 
-    <footer class="footer">
-        <div class="container footer-inner">
-            <span class="footer-logo">Kanchana Ariyasinghe | Computer Engineering | UOJ<span>.</span></span>
-            <p>&copy; 2025 Kanchana Ariyasinghe. All rights reserved.</p>
-            <div class="footer-links">
-                <a href="https://github.com/KanchanaAriyasinghe" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+        <p class="hero-bio">
+          Final-year Computer Engineering student at University of Jaffna with a passion for building intelligent systems and scalable web applications. I thrive at the intersection of software engineering and machine learning.
+        </p>
+
+        <div class="hero-cta">
+          <a href="#projects" class="btn-primary scroll-link">
+            Projects
+            <svg class="btn-icon"><use href="#ico-code"/></svg>
+          </a>
+          <a href="assets/Kanchana Aariyasinghe CV.pdf" target="_blank" class="btn-outline">
+            View Resume
+            <svg class="btn-icon"><use href="#ico-external"/></svg>
+          </a>
+          <a href="assets/Kanchana Aariyasinghe CV.pdf" class="btn-outline" download>
+            Download Resume
+            <svg class="btn-icon"><use href="#ico-download"/></svg>
+          </a>
         </div>
-    </footer>
 
-    <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
-    <script src="js/main.js"></script>
+        <div class="hero-socials">
+          <a href="https://web.facebook.com/kanchana.ariyasinghe.12" target="_blank" aria-label="Facebook">
+            <svg><use href="#ico-facebook"/></svg>
+          </a>
+          <a href="https://www.instagram.com/kanchi_gayathree?igsh=dDJyMnZmYm9ocGhq" target="_blank" aria-label="Instagram">
+            <svg><use href="#ico-instagram"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" aria-label="LinkedIn">
+            <svg><use href="#ico-linkedin"/></svg>
+          </a>
+          <a href="https://github.com/KanchanaAriyasinghe" target="_blank" aria-label="GitHub">
+            <svg><use href="#ico-github"/></svg>
+          </a>
+        </div>
+      </div>
+
+      <!-- Right photo -->
+      <div class="hero-photo-wrap">
+        <div class="hero-photo-blob"></div>
+        <img src="assets/profile-pic.jpeg" alt="Kanchana Ariyasinghe" class="hero-photo" />
+        <!-- <div class="hero-badge-card">
+          <span class="badge-icon">💼</span>
+          <div>
+            <span class="badge-num">7+</span>
+            <span class="badge-lbl">Projects</span>
+          </div>
+        </div>
+        <div class="hero-badge-card badge-card-2">
+          <span class="badge-icon">🎯</span>
+          <div>
+            <span class="badge-num">90%</span>
+            <span class="badge-lbl">ML Accuracy</span>
+          </div>
+        </div> -->
+      </div>
+
+    </div>
+    <div class="hero-deco hero-deco-1"></div>
+    <div class="hero-deco hero-deco-2"></div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       ABOUT / SKILLS / EXPERIENCE
+  ══════════════════════════════════════════════ -->
+  <section class="section bg-light" id="about">
+    <div class="container">
+
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
+      <p class="section-sub">Technologies I work with every day</p>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="skill-icon">
+            <svg><use href="#ico-code"/></svg>
+          </div>
+          <h3>Languages</h3>
+          <ul>
+            <li>JavaScript</li>
+            <li>Python</li>
+            <li>C++</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <svg><use href="#ico-layers"/></svg>
+          </div>
+          <h3>Frameworks</h3>
+          <ul>
+            <li>React &amp; Node.js</li>
+            <li>React Native</li>
+            <li>TensorFlow / PyTorch</li>
+            <li>Spring Boot</li>
+            <li>Next.js</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <svg><use href="#ico-database"/></svg>
+          </div>
+          <h3>Databases</h3>
+          <ul>
+            <li>MySQL</li>
+            <li>MongoDB</li>
+            <li>PostgreSQL</li>
+          </ul>
+        </div>
+        <div class="skill-card">
+          <div class="skill-icon">
+            <svg><use href="#ico-tool"/></svg>
+          </div>
+          <h3>Tools</h3>
+          <ul>
+            <li>Git &amp; GitHub</li>
+            <li>Jira</li>
+            <li>BitBucket</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Work Experience -->
+      <div class="section-label" style="margin-top:5rem;">Experience</div>
+      <h2 class="section-title">Work <span class="accent">Experience</span></h2>
+      <p class="section-sub">Where I've built real-world systems</p>
+
+      <div class="exp-timeline">
+        <div class="exp-card">
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <div class="exp-top">
+              <div>
+                <p class="exp-role">Software Engineer Intern</p>
+                <p class="exp-company">
+                  <svg class="inline-svg"><use href="#ico-building"/></svg>
+                  Sri Lanka Telecom
+                </p>
+              </div>
+              <div class="exp-right">
+                <span class="exp-badge"><span class="live-dot"></span> Present</span>
+                <span class="exp-date">Nov 2025 – Present · 6 months</span>
+              </div>
+            </div>
+            <hr class="exp-divider" />
+            <ul class="exp-bullets">
+              <li>Full stack development on the <strong>Business Continuity Management System (BCMS)</strong> using the <strong>MERN stack</strong> (MongoDB, Express.js, React, Node.js).</li>
+              <li>Designed and implementing a <strong>Learning Path Management System (LPMS)</strong> for the HR Talent Development section using the <strong>PERN stack</strong> (PostgreSQL, Express.js, React, Node.js).</li>
+            </ul>
+            <div class="exp-tags">
+              <span>MongoDB</span><span>PostgreSQL</span><span>Express.js</span><span>React</span><span>Node.js</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Courses & Volunteering -->
+       <div class="section-label" style="margin-top:5rem;">Archivments</div>
+       <h2 class="section-title">My <span class="accent">Archivments</span></h2>
+      <div class="two-col-grid" style="margin-top:4rem;">
+        <div class="info-block">
+          <div class="info-label">
+            <svg class="inline-svg"><use href="#ico-cert"/></svg>
+            Courses &amp; Certifications
+          </div>
+          <ul class="check-list">
+            <li>
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_codsoft-javaprogramming-certificate-activity-7261024337569148928-Da7w" target="_blank">Java Programming Internship</a>
+              <span class="pill">Codesoft</span>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_algoxplore-ctfchallenges-teamwork-activity-7281009431574638592-cqr5" target="_blank">AlgoXplore 1.0 — Algorithm &amp; CTF</a>
+              <span class="pill">NSBM</span>
+            </li>
+            <li>
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_moraxtreme-ieee-universityofmoratuwa-activity-7261020108511236096-aozi" target="_blank">MoraXtreme 9.0 — 12h Coding Marathon</a>
+              <span class="pill">IEEE UOM</span>
+            </li>
+            <li>
+              TECHNOVATION 2025 — AI Innovation Challenge
+              <span class="pill pill-green">Finalist</span>
+            </li>
+          </ul>
+        </div>
+        <div class="info-block">
+          <div class="info-label">
+            <svg class="inline-svg"><use href="#ico-heart"/></svg>
+            Volunteering
+          </div>
+          <ul class="check-list">
+            <li>
+              IESL Student Chapter — University of Jaffna
+              <span class="pill">S-29763</span>
+            </li>
+            <li>
+              IEEE Student Member
+              <span class="pill">100411452</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       PROJECTS
+  ══════════════════════════════════════════════ -->
+  <section class="section" id="projects">
+    <div class="container">
+
+      <div class="section-label">Portfolio</div>
+      <h2 class="section-title">Recent <span class="accent">Projects</span></h2>
+      <p class="section-sub">
+        Below you can see examples of my recent work.<br>
+        Have a project you would like to discuss?
+        <a href="#contact" class="inline-link scroll-link">Let's make something great together!</a>
+      </p>
+
+      <div class="project-grid">
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/project1.png" alt="Computer Lab Booking System" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-external"/></svg>
+              </a>
+              <a href="https://github.com/KanchanaAriyasinghe/Computer-Lab-booking-and-equipments-borrowing" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-github"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+            <h3>Computer Lab Booking &amp; Equipment Borrowing</h3>
+            <p>Full-stack MERN system for booking labs and borrowing equipment with real-time availability tracking.</p>
+            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="view-project-btn">
+              View project
+              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/project2.png" alt="Smart Medicine Reminder Box" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-external"/></svg>
+              </a>
+              <a href="https://github.com/BuddhiniNavoda/smart-medical-reminder-box-EC6020" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-github"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>IoT</span><span>ESP32</span><span>Firebase</span></div>
+            <h3>Smart Medicine Reminder Box</h3>
+            <p>IoT-based device for automated medication tracking with real-time scheduling via Firebase-powered web interface.</p>
+            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="view-project-btn">
+              View project
+              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/project7.png" alt="Research AI Chatbot" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_ai-machinelearning-nlp-activity-7395024416532955136--301" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-external"/></svg>
+              </a>
+              <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-github"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>Python</span><span>Flask</span><span>Groq API</span></div>
+            <h3>Research AI Chatbot</h3>
+            <p>Intelligent assistant combining PDF analysis, academic paper discovery, and conversational AI for researchers.</p>
+            <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="view-project-btn">
+              View project
+              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/project4.png" alt="Movie Finder" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-github"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>React</span><span>TMDB API</span><span>JavaScript</span></div>
+            <h3>Movie Finder</h3>
+            <p>A clean web application for discovering movies, browsing details, and exploring genres via the TMDB API.</p>
+            <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="view-project-btn">
+              View project
+              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/project3.png" alt="Currency Converter" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-github"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>React</span><span>Node.js</span><span>Exchange Rates API</span></div>
+            <h3>Smart Currency Converter</h3>
+            <p>Convert currencies using real-time and historical exchange rate data with a clean, intuitive interface.</p>
+            <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="view-project-btn">
+              View project
+              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/project5.png" alt="Student Feedback System" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-external"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>PHP</span><span>MySQL</span><span>HTML/CSS</span></div>
+            <h3>Student Feedback Management</h3>
+            <p>System to collect and manage course and lecturer feedback within the faculty with admin reporting.</p>
+            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="view-project-btn">
+              View project
+              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+        <article class="project-card">
+          <div class="project-thumb">
+            <img src="assets/project6.png" alt="Food Recipe App" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="overlay-btn">
+                <svg><use href="#ico-github"/></svg>
+              </a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>React</span><span>Node.js</span><span>JavaScript</span></div>
+            <h3>Food Recipe App</h3>
+            <p>Platform for discovering, creating, and sharing recipes with a full-stack React and Node.js architecture.</p>
+            <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="view-project-btn">
+              View project
+              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
+            </a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       RESEARCH
+  ══════════════════════════════════════════════ -->
+  <section class="section bg-light" id="research">
+    <div class="container">
+
+      <div class="section-label">Academic Work</div>
+      <h2 class="section-title">My <span class="accent">Research</span></h2>
+      <p class="section-sub">Exploring machine learning and computer vision to solve real-world infrastructure problems.</p>
+
+      <div class="research-card">
+        <div class="research-card-header">
+          <span class="status-badge"><span class="pulse-dot"></span> Ongoing Research</span>
+          <div class="research-tech-stack">
+            <span>YOLOv8m</span><span>MobileNetV2</span><span>CycleGAN</span><span>CLAHE</span><span>Deep Learning</span>
+          </div>
+        </div>
+
+        <h3 class="research-title">Potholes Detection using Advanced Object Detection Techniques</h3>
+
+        <div class="r-stats">
+          <div class="r-stat">
+            <span class="r-num">90.3%</span>
+            <span class="r-lbl">Model Accuracy</span>
+          </div>
+          <div class="r-stat">
+            <span class="r-num">2</span>
+            <span class="r-lbl">Model Ensemble</span>
+          </div>
+          <div class="r-stat">
+            <span class="r-num">Real&#8209;time</span>
+            <span class="r-lbl">Detection Speed</span>
+          </div>
+        </div>
+
+        <div class="research-abstract">
+          <h4>
+            <svg class="inline-svg"><use href="#ico-text"/></svg>
+            Abstract
+          </h4>
+          <p>Developed a real-time pothole detection system using an ensemble of YOLOv8m and MobileNetV2 models, achieving 90.3% accuracy across challenging conditions including low-light, rain, and cluttered environments. Integrated advanced preprocessing techniques (CycleGAN for domain adaptation, CLAHE for contrast enhancement), model optimization, and edge deployment for scalable smart road monitoring.</p>
+        </div>
+
+        <div class="video-section">
+          <h4 class="video-heading">
+            <svg class="inline-svg"><use href="#ico-play-circle"/></svg>
+            Demo Video
+          </h4>
+          <div class="video-player">
+            <div class="video-wrapper">
+              <video id="researchVideo" preload="metadata">
+                <source src="assets/Media1.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+              <div class="video-overlay" id="videoOverlay">
+                <button class="big-play-btn" id="bigPlayBtn" aria-label="Play video">
+                  <svg><use href="#ico-play"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="video-controls-bar">
+              <div class="vc-left">
+                <button class="vc-btn" id="playPauseBtn">
+                  <svg id="playIcon"><use href="#ico-play"/></svg>
+                </button>
+                <span class="vc-time" id="currentTime">0:00</span>
+                <span class="vc-sep">/</span>
+                <span class="vc-time" id="duration">0:00</span>
+              </div>
+              <div class="vc-progress" id="progressBar">
+                <div class="vc-progress-fill" id="progressFill"></div>
+              </div>
+              <div class="vc-right">
+                <button class="vc-btn" id="muteBtn">
+                  <svg id="volIcon"><use href="#ico-volume"/></svg>
+                </button>
+                <button class="vc-btn" id="fullscreenBtn">
+                  <svg><use href="#ico-expand"/></svg>
+                </button>
+                <a href="assets/Media1.mp4" download class="vc-btn">
+                  <svg><use href="#ico-download"/></svg>
+                </a>
+              </div>
+            </div>
+          </div>
+          <p class="video-caption">The demo shows the YOLOv8m + MobileNetV2 ensemble detecting potholes in real-time under low-light and wet-road conditions.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       CONTACT
+  ══════════════════════════════════════════════ -->
+  <section class="section" id="contact">
+    <div class="container">
+
+      <div class="section-label">Get In Touch</div>
+      <h2 class="section-title">Contact <span class="accent">Me</span></h2>
+      <p class="section-sub">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
+
+      <div class="contact-grid">
+
+        <div class="contact-info">
+
+          <a href="mailto:ariyasinghekanchana@gmail.com" class="contact-card">
+            <div class="contact-icon"><svg><use href="#ico-mail"/></svg></div>
+            <div>
+              <p class="contact-card-label">Email</p>
+              <p class="contact-card-value">ariyasinghekanchana@gmail.com</p>
+            </div>
+          </a>
+
+          <a href="https://wa.me/94760251767" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon"><svg><use href="#ico-whatsapp"/></svg></div>
+            <div>
+              <p class="contact-card-label">WhatsApp</p>
+              <p class="contact-card-value">+94 76 025 1767</p>
+            </div>
+          </a>
+
+          <div class="contact-card">
+                      <div class="contact-icon"><svg><use href="#ico-phone"/></svg></div>
+            <div>
+              <p class="contact-card-label">Telephone</p>
+              <p class="contact-card-value">+94 72 236 7866</p>
+        </div>
+
+          </div>
+
+          <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon"><svg><use href="#ico-linkedin"/></svg></div>
+            <div>
+              <p class="contact-card-label">LinkedIn</p>
+              <p class="contact-card-value">Kanchana Ariyasinghe</p>
+            </div>
+          </a>
+
+          <a href="https://github.com/KanchanaAriyasinghe" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon"><svg><use href="#ico-github"/></svg></div>
+            <div>
+              <p class="contact-card-label">GitHub</p>
+              <p class="contact-card-value">KanchanaAriyasinghe</p>
+            </div>
+          </a>
+
+          <a href="https://web.facebook.com/kanchana.ariyasinghe.12" target="_blank" rel="noopener noreferrer" class="contact-card">
+            <div class="contact-icon"><svg><use href="#ico-facebook"/></svg></div>
+            <div>
+              <p class="contact-card-label">Facebook</p>
+              <p class="contact-card-value">Kanchana Ariyasinghe</p>
+            </div>
+          </a>
+
+        </div>
+
+        <div class="contact-form-wrap">
+          <form class="contact-form" id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First Name *</label>
+                <input type="text" id="fname" name="fname" placeholder="John" required />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last Name</label>
+                <input type="text" id="lname" name="lname" placeholder="Doe" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="email">Email Address *</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required />
+            </div>
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Project Inquiry" />
+            </div>
+            <div class="form-group">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+
+            <div class="form-status" id="formStatus"></div>
+
+            <button type="submit" class="btn-submit" id="submitBtn">
+              Send Message
+              <svg class="btn-icon" id="submitIcon"><use href="#ico-send"/></svg>
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ══════════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════════ -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <span class="footer-logo">Kanchana<span>.</span></span>
+      <p class="footer-copy">&copy; 2025 Kanchana Ariyasinghe. All rights reserved.</p>
+      <div class="footer-socials">
+        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><svg><use href="#ico-facebook"/></svg></a>
+        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><svg><use href="#ico-instagram"/></svg></a>
+        <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" aria-label="LinkedIn"><svg><use href="#ico-linkedin"/></svg></a>
+        <a href="https://github.com/KanchanaAriyasinghe" target="_blank" aria-label="GitHub"><svg><use href="#ico-github"/></svg></a>
+      </div>
+    </div>
+  </footer>
+
+  <button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
+    <svg><use href="#ico-arrow-up"/></svg>
+  </button>
+
+  <script src="js/main.js"></script>
 </body>
 </html>
