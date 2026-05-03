@@ -38,7 +38,7 @@ if (scrollTopBtn) {
 const sections = document.querySelectorAll('section[id]');
 const navLinks  = document.querySelectorAll('.nav-link');
 
-const observer = new IntersectionObserver(entries => {
+const navObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       const id = entry.target.id;
@@ -50,7 +50,7 @@ const observer = new IntersectionObserver(entries => {
   });
 }, { rootMargin: '-40% 0px -55% 0px', threshold: 0 });
 
-sections.forEach(s => observer.observe(s));
+sections.forEach(s => navObserver.observe(s));
 
 /* ── Smooth scroll for anchor links ─────────────────────── */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
@@ -65,30 +65,152 @@ document.querySelectorAll('a[href^="#"]').forEach(a => {
 });
 
 /* ── Scroll-reveal animation ─────────────────────────────── */
-const revealObserver = new IntersectionObserver(entries => {
+function initReveal() {
+  const revealObserver = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('revealed');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+
+  // Add reveal to elements that don't already have it from HTML
+  document.querySelectorAll(
+    '.skill-card, .skill-bar-item, .project-card, .exp-card, .info-block, .contact-card, .r-stat, .research-card, .resume-sub-heading, .ref-card'
+  ).forEach(el => {
+    if (!el.classList.contains('reveal')) {
+      el.classList.add('reveal');
+    }
+    revealObserver.observe(el);
+  });
+
+  // Service cards - observe separately with a generous rootMargin
+  const serviceRevealObserver = new IntersectionObserver(entries => {
+    entries.forEach((entry, i) => {
+      if (entry.isIntersecting) {
+        // Stagger the reveal per card
+        const cards = Array.from(document.querySelectorAll('.service-card'));
+        const idx = cards.indexOf(entry.target);
+        setTimeout(() => {
+          entry.target.classList.add('revealed');
+        }, idx * 80);
+        serviceRevealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.05, rootMargin: '100px 0px 0px 0px' });
+
+  document.querySelectorAll('.service-card').forEach(el => {
+    serviceRevealObserver.observe(el);
+  });
+
+  // Observe all plain .reveal elements from HTML
+  document.querySelectorAll('.reveal').forEach(el => {
+    revealObserver.observe(el);
+  });
+}
+
+// Run on DOM ready
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', initReveal);
+} else {
+  initReveal();
+}
+
+/* ── Stat Cards Reveal ───────────────────────────────────── */
+const statRevealObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add('revealed');
-      revealObserver.unobserve(entry.target);
+      statRevealObserver.unobserve(entry.target);
     }
   });
 }, { threshold: 0.1 });
 
-document.querySelectorAll(
-  '.skill-card, .project-card, .exp-card, .info-block, .contact-card, .r-stat, .research-card'
-).forEach(el => {
-  el.classList.add('reveal');
-  revealObserver.observe(el);
+document.querySelectorAll('.reveal-stat').forEach(el => {
+  statRevealObserver.observe(el);
 });
+
+/* ══════════════════════════════════════════════════════════
+   ANIMATED STAT COUNTERS
+══════════════════════════════════════════════════════════ */
+function animateCounter(el, target, suffix, duration) {
+  let start = 0;
+  const startTime = performance.now();
+
+  function step(currentTime) {
+    const elapsed = currentTime - startTime;
+    const progress = Math.min(elapsed / duration, 1);
+    const eased = 1 - Math.pow(1 - progress, 3);
+    const current = Math.round(eased * target);
+    el.textContent = current + suffix;
+    if (progress < 1) {
+      requestAnimationFrame(step);
+    } else {
+      el.textContent = target + suffix;
+    }
+  }
+  requestAnimationFrame(step);
+}
+
+function initStatCounters() {
+  const statNumbers = document.querySelectorAll('.stat-number');
+  if (!statNumbers.length) return;
+
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const el = entry.target;
+        const target = parseInt(el.getAttribute('data-target'), 10);
+        const suffix = el.getAttribute('data-suffix') || '';
+        const card = el.closest('.stat-card');
+        const cards = Array.from(document.querySelectorAll('.stat-card'));
+        const idx = cards.indexOf(card);
+        const delay = idx * 100;
+        setTimeout(() => {
+          animateCounter(el, target, suffix, 1800);
+        }, delay);
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  statNumbers.forEach(el => counterObserver.observe(el));
+}
+
+initStatCounters();
+
+/* ── Skill Bar Animations ────────────────────────────────── */
+function initSkillBars() {
+  const fills = document.querySelectorAll('.skill-bar-fill');
+  if (!fills.length) return;
+
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const fill = entry.target;
+        const targetWidth = fill.getAttribute('data-width');
+        setTimeout(() => {
+          fill.style.width = targetWidth + '%';
+        }, 150);
+        skillObserver.unobserve(fill);
+      }
+    });
+  }, { threshold: 0.3 });
+
+  fills.forEach(fill => skillObserver.observe(fill));
+}
+
+initSkillBars();
 
 /* ── Video Player (SVG icon version) ────────────────────── */
 const video         = document.getElementById('researchVideo');
 const overlay       = document.getElementById('videoOverlay');
 const bigPlayBtn    = document.getElementById('bigPlayBtn');
 const playPauseBtn  = document.getElementById('playPauseBtn');
-const playIconEl    = document.getElementById('playIcon');   // <svg> element
+const playIconEl    = document.getElementById('playIcon');
 const muteBtn       = document.getElementById('muteBtn');
-const volIconEl     = document.getElementById('volIcon');    // <svg> element
+const volIconEl     = document.getElementById('volIcon');
 const fullscreenBtn = document.getElementById('fullscreenBtn');
 const progressBar   = document.getElementById('progressBar');
 const progressFill  = document.getElementById('progressFill');
@@ -144,16 +266,7 @@ if (video) {
   });
 }
 
-/* ── Contact Form ────────────────────────────────────────────
-   HOW TO ENABLE REAL EMAIL SENDING:
-   1. Sign up free at https://emailjs.com
-   2. Create an Email Service → copy Service ID
-   3. Create an Email Template with variables:
-      {{from_name}}, {{from_email}}, {{subject}}, {{message}}
-      → copy Template ID
-   4. Account → copy Public Key
-   5. Replace the three values below
-   ──────────────────────────────────────────────────────────── */
+/* ── Contact Form ────────────────────────────────────────── */
 const EMAILJS_PUBLIC_KEY  = 'WfEFXG-uH6eloFg1E';
 const EMAILJS_SERVICE_ID  = 'service_st7levs';
 const EMAILJS_TEMPLATE_ID = 'template_ynu4zll';
@@ -192,7 +305,6 @@ if (contactForm) {
       return;
     }
 
-    // Fallback: open mail client if EmailJS not configured
     if (!emailJSConfigured || typeof emailjs === 'undefined') {
       const mailSubject = encodeURIComponent(subject || `Portfolio Contact from ${fname} ${lname}`.trim());
       const mailBody    = encodeURIComponent(`Name: ${fname} ${lname}\nEmail: ${email}\n\nMessage:\n${message}`);
@@ -201,7 +313,6 @@ if (contactForm) {
       return;
     }
 
-    // Send via EmailJS
     submitBtn.disabled = true;
     submitBtn.innerHTML = 'Sending… <svg class="btn-icon" style="animation:spin 1s linear infinite"><use href="#ico-spinner"/></svg>';
 
@@ -234,7 +345,6 @@ function showStatus(msg, type) {
   setTimeout(() => { formStatus.className = 'form-status'; }, 8000);
 }
 
-/* spinner keyframe via JS (avoids a CSS-only dependency) */
 const spinStyle = document.createElement('style');
 spinStyle.textContent = '@keyframes spin { to { transform: rotate(360deg); } }';
 document.head.appendChild(spinStyle);

@@ -5,39 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Kanchana Ariyasinghe — Software &amp; ML Engineer</title>
   <link rel="stylesheet" href="css/style.css" />
-  <!-- EmailJS — required for the contact form to send real emails -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
-  <!-- Inline SVG sprite — no external icon dependency -->
   <svg xmlns="http://www.w3.org/2000/svg" style="display:none">
-    <!-- nav / misc -->
-    <symbol id="ico-menu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></symbol>
-    <symbol id="ico-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></symbol>
     <symbol id="ico-arrow-up" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></symbol>
     <symbol id="ico-arrow-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></symbol>
     <symbol id="ico-external" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></symbol>
     <symbol id="ico-download" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></symbol>
     <symbol id="ico-send" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></symbol>
-    <symbol id="ico-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></symbol>
-
-    <!-- skill section icons -->
     <symbol id="ico-code" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></symbol>
-    <symbol id="ico-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 2 7 12 12 22 7 12 2"/><polyline points="2 17 12 22 22 17"/><polyline points="2 12 12 17 22 12"/></symbol>
-    <symbol id="ico-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
-    <symbol id="ico-tool" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></symbol>
-
-    <!-- social icons -->
     <symbol id="ico-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></symbol>
     <symbol id="ico-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></symbol>
     <symbol id="ico-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></symbol>
     <symbol id="ico-github" viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></symbol>
     <symbol id="ico-whatsapp" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></symbol>
     <symbol id="ico-mail" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></symbol>
-    <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67 A2 2 0 0 1 4.11 2h3 a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91 a16 16 0 0 0 6 6 l1.27-1.27 a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7 A2 2 0 0 1 22 16.92z"/></symbol>
-
-    <!-- experience / misc -->
+    <symbol id="ico-phone" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></symbol>
     <symbol id="ico-building" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></symbol>
     <symbol id="ico-cert" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/></symbol>
+    <symbol id="ico-graduation" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></symbol>
     <symbol id="ico-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></symbol>
     <symbol id="ico-play" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></symbol>
     <symbol id="ico-pause" viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="4" width="4" height="16"/><rect x="14" y="4" width="4" height="16"/></symbol>
@@ -46,185 +32,423 @@
     <symbol id="ico-expand" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></symbol>
     <symbol id="ico-text" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="6" x2="20" y2="6"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="18" x2="14" y2="18"/></symbol>
     <symbol id="ico-play-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></symbol>
+    <symbol id="ico-bank" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="22" x2="21" y2="22"/><line x1="6" y1="18" x2="6" y2="11"/><line x1="10" y1="18" x2="10" y2="11"/><line x1="14" y1="18" x2="14" y2="11"/><line x1="18" y1="18" x2="18" y2="11"/><polygon points="12 2 20 7 4 7 12 2"/></symbol>
+    <symbol id="ico-spinner" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></symbol>
+    <symbol id="ico-map-pin" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></symbol>
+    <symbol id="ico-ref" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+    <!-- Service icons -->
+    <symbol id="ico-globe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></symbol>
+    <symbol id="ico-brain" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96-.46 2.5 2.5 0 0 1-1.07-4.73A3 3 0 0 1 3.5 10a3 3 0 0 1 2.5-2.96A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96-.46 2.5 2.5 0 0 0 1.07-4.73A3 3 0 0 0 20.5 10a3 3 0 0 0-2.5-2.96A2.5 2.5 0 0 0 14.5 2Z"/></symbol>
+    <!-- UI/UX pen-tool icon -->
+    <symbol id="ico-pen" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="M2 2l7.586 7.586"/><circle cx="11" cy="11" r="2"/></symbol>
+    <symbol id="ico-cpu" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="4" width="16" height="16" rx="2"/><rect x="9" y="9" width="6" height="6"/><line x1="9" y1="1" x2="9" y2="4"/><line x1="15" y1="1" x2="15" y2="4"/><line x1="9" y1="20" x2="9" y2="23"/><line x1="15" y1="20" x2="15" y2="23"/><line x1="20" y1="9" x2="23" y2="9"/><line x1="20" y1="14" x2="23" y2="14"/><line x1="1" y1="9" x2="4" y2="9"/><line x1="1" y1="14" x2="4" y2="14"/></symbol>
+    <symbol id="ico-database" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M21 12c0 1.66-4 3-9 3s-9-1.34-9-3"/><path d="M3 5v14c0 1.66 4 3 9 3s9-1.34 9-3V5"/></symbol>
+    <symbol id="ico-eye" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></symbol>
   </svg>
 </head>
 <body>
 
-  <!-- ══════════════════════════════════════════════
-       HEADER / NAV
-  ══════════════════════════════════════════════ -->
+  <!-- HEADER -->
   <header class="header" id="header">
     <div class="container nav-inner">
       <a href="#home" class="logo">Kanchana<span>.</span></a>
-
       <nav class="navbar" id="navbar">
         <ul class="nav-list">
-          <li><a href="#home"     class="nav-link active">Home</a></li>
-          <li><a href="#about"    class="nav-link">About</a></li>
-          <li><a href="#projects" class="nav-link">Projects</a></li>
-          <li><a href="#research" class="nav-link">Research</a></li>
-          <li><a href="#contact"  class="nav-link">Contact</a></li>
+          <li><a href="#home"       class="nav-link active">Home</a></li>
+          <li><a href="#services"   class="nav-link">Services</a></li>
+          <li><a href="#skills"     class="nav-link">Skills</a></li>
+          <li><a href="#resume"     class="nav-link">Resume</a></li>
+          <li><a href="#projects"   class="nav-link">Projects</a></li>
+          <li><a href="#research"   class="nav-link">Research</a></li>
+          <li><a href="#references" class="nav-link">References</a></li>
+          <li><a href="#contact"    class="nav-link">Contact</a></li>
         </ul>
       </nav>
-
-      <a href="#contact" class="btn-talk scroll-link">Let's Talk</a>
-
+      <a href="#contact" class="btn-talk scroll-link">Hire Me</a>
       <button class="hamburger" id="hamburger" aria-label="Toggle menu">
         <span></span><span></span><span></span>
       </button>
     </div>
   </header>
 
-
   <!-- ══════════════════════════════════════════════
        HERO
   ══════════════════════════════════════════════ -->
   <section id="home" class="hero-section">
     <div class="hero-inner container">
-
-      <!-- Left text -->
       <div class="hero-text">
         <h3 class="hero-greeting">Hi, I'm</h3>
-
-        <h1 class="hero-role">
-          Kanchana Ariyasinghe<br>
-        </h1>
-        <h1 class="hero-role">
-          Undergraduate | <span class="accent">Computer Engineering</span> | UOJ<br>
-        </h1>
-        
-
-        <h2 class="hero-name"><span class="accent">SOFTWARE</span> &amp; <span class="accent">ML </span>ENGINEER</h2>
-
+        <h1 class="hero-name">Kanchana Ariyasinghe</h1>
+        <h1 class="hero-role">Undergraduate | <span class="accent">Computer Engineering</span> | UOJ</h1>
+        <h2 class="hero-subtitle"><span class="accent">SOFTWARE</span> &amp; <span class="accent">ML</span> ENGINEER</h2>
         <p class="hero-bio">
-          Final-year Computer Engineering student at University of Jaffna with a passion for building intelligent systems and scalable web applications. I thrive at the intersection of software engineering and machine learning.
+          Final-year Computer Engineering undergraduate at the University of Jaffna with hands-on experience in full-stack development and AI based systems, including scalable web applications, machine learning, and computer vision techniques. Always adept at exploring new technologies and applying them to innovative solutions. Demonstrates a commitment to continuous learning and effective teamwork.
         </p>
-
+        <div class="hero-hire-wrap">
+          <a href="#contact" class="btn-hire scroll-link">
+            <span class="btn-hire-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </span>
+            Hire Me
+            <span class="btn-hire-badge">Open to Work</span>
+          </a>
+        </div>
         <div class="hero-cta">
           <a href="#projects" class="btn-primary scroll-link">
-            Projects
-            <svg class="btn-icon"><use href="#ico-code"/></svg>
+            Projects <svg class="btn-icon"><use href="#ico-code"/></svg>
           </a>
           <a href="assets/Kanchana Aariyasinghe CV.pdf" target="_blank" class="btn-outline">
-            View Resume
-            <svg class="btn-icon"><use href="#ico-external"/></svg>
+            View Resume <svg class="btn-icon"><use href="#ico-external"/></svg>
           </a>
           <a href="assets/Kanchana Aariyasinghe CV.pdf" class="btn-outline" download>
-            Download Resume
-            <svg class="btn-icon"><use href="#ico-download"/></svg>
+            Download Resume <svg class="btn-icon"><use href="#ico-download"/></svg>
           </a>
         </div>
-
-
         <div class="hero-socials">
-          <a href="https://web.facebook.com/kanchana.ariyasinghe.12" target="_blank" aria-label="Facebook">
-            <svg><use href="#ico-facebook"/></svg>
-          </a>
-          <a href="https://www.instagram.com/kanchi_gayathree?igsh=dDJyMnZmYm9ocGhq" target="_blank" aria-label="Instagram">
-            <svg><use href="#ico-instagram"/></svg>
-          </a>
-          <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" aria-label="LinkedIn">
-            <svg><use href="#ico-linkedin"/></svg>
-          </a>
-          <a href="https://github.com/KanchanaAriyasinghe" target="_blank" aria-label="GitHub">
-            <svg><use href="#ico-github"/></svg>
-          </a>
+          <a href="https://web.facebook.com/kanchana.ariyasinghe.12" target="_blank" aria-label="Facebook"><svg><use href="#ico-facebook"/></svg></a>
+          <a href="https://www.instagram.com/kanchi_gayathree?igsh=dDJyMnZmYm9ocGhq" target="_blank" aria-label="Instagram"><svg><use href="#ico-instagram"/></svg></a>
+          <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" aria-label="LinkedIn"><svg><use href="#ico-linkedin"/></svg></a>
+          <a href="https://github.com/KanchanaAriyasinghe" target="_blank" aria-label="GitHub"><svg><use href="#ico-github"/></svg></a>
         </div>
       </div>
-
-      <!-- Right photo -->
       <div class="hero-photo-wrap">
         <div class="hero-photo-blob"></div>
         <img src="assets/profile-pic.jpeg" alt="Kanchana Ariyasinghe" class="hero-photo" />
-        <!-- <div class="hero-badge-card">
-          <span class="badge-icon">💼</span>
-          <div>
-            <span class="badge-num">7+</span>
-            <span class="badge-lbl">Projects</span>
-          </div>
-        </div>
-        <div class="hero-badge-card badge-card-2">
-          <span class="badge-icon">🎯</span>
-          <div>
-            <span class="badge-num">90%</span>
-            <span class="badge-lbl">ML Accuracy</span>
-          </div>
-        </div> -->
       </div>
-
     </div>
     <div class="hero-deco hero-deco-1"></div>
     <div class="hero-deco hero-deco-2"></div>
   </section>
 
+  <!-- ══════════════════════════════════════════════
+       STATS SECTION
+  ══════════════════════════════════════════════ -->
+  <section class="stats-section" id="stats">
+    <div class="container">
+      <div class="stats-grid">
+
+        <div class="stat-card reveal-stat">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="13" data-suffix="+">0</span>
+          </div>
+          <p class="stat-label">Projects Completed</p>
+        </div>
+
+        <div class="stat-card reveal-stat">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="2" data-suffix="+">0</span>
+          </div>
+          <p class="stat-label">Years Experience</p>
+        </div>
+
+        <div class="stat-card reveal-stat">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="8" r="6"/><path d="M15.477 12.89L17 22l-5-3-5 3 1.523-9.11"/>
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="4" data-suffix="+">0</span>
+          </div>
+          <p class="stat-label">Certifications</p>
+        </div>
+
+        <div class="stat-card reveal-stat">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/>
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="10" data-suffix="+">0</span>
+          </div>
+          <p class="stat-label">Technologies</p>
+        </div>
+
+        <div class="stat-card reveal-stat">
+          <div class="stat-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/>
+            </svg>
+          </div>
+          <div class="stat-number-wrap">
+            <span class="stat-number" data-target="90" data-suffix="%">0</span>
+          </div>
+          <p class="stat-label">Research Accuracy</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
   <!-- ══════════════════════════════════════════════
-       ABOUT / SKILLS / EXPERIENCE
+       SERVICES SECTION
   ══════════════════════════════════════════════ -->
-  <section class="section bg-light" id="about">
+  <section class="section" id="services">
+    <div class="container">
+      <div class="section-label">What I Do</div>
+      <h2 class="section-title">My <span class="accent">Services</span></h2>
+      <p class="section-sub">End-to-end solutions across software development, machine learning, and intelligent systems.</p>
+
+      <div class="services-grid">
+
+        <!-- 1. Full-Stack Web Development -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#ico-globe"/></svg>
+          </div>
+          <h3 class="service-title">Full-Stack Web Development</h3>
+          <p class="service-desc">Building fast, scalable web applications using the MERN &amp; PERN stacks — from landing pages and admin dashboards to full enterprise platforms with authentication, APIs, and real-time features.</p>
+          <div class="service-tags">
+            <span>React</span><span>Node.js</span><span>MongoDB</span><span>PostgreSQL</span>
+          </div>
+        </div>
+
+        <!-- 2. Machine Learning & AI -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#ico-brain"/></svg>
+          </div>
+          <h3 class="service-title">Machine Learning &amp; AI</h3>
+          <p class="service-desc">Developing intelligent models for classification, object detection, and natural language understanding. Experienced in building AI-powered tools like research chatbots and computer vision systems with TensorFlow and PyTorch.</p>
+          <div class="service-tags">
+            <span>TensorFlow</span><span>PyTorch</span><span>YOLOv8</span><span>Python</span>
+          </div>
+        </div>
+
+        <!-- 3. Computer Vision Systems -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#ico-eye"/></svg>
+          </div>
+          <h3 class="service-title">Computer Vision Systems</h3>
+          <p class="service-desc">Real-time detection and analysis systems using deep learning ensembles, image preprocessing (CLAHE, CycleGAN), and edge deployment — like the 90.3%-accurate pothole detection research project.</p>
+          <div class="service-tags">
+            <span>YOLOv8m</span><span>MobileNetV2</span><span>CycleGAN</span><span>OpenCV</span>
+          </div>
+        </div>
+
+        <!-- 4. UI/UX Design -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#ico-pen"/></svg>
+          </div>
+          <h3 class="service-title">UI/UX Design</h3>
+          <p class="service-desc">Designing intuitive, beautiful interfaces with a focus on user experience, accessibility, and modern design systems. Creating wireframes, prototypes, and pixel-perfect designs that delight users across web and mobile platforms.</p>
+          <div class="service-tags">
+            <span>Figma</span><span>Wireframing</span><span>Prototyping</span><span>Design Systems</span>
+          </div>
+        </div>
+
+        <!-- 5. API & Backend Engineering -->
+        <div class="service-card reveal">
+          <div class="service-icon-wrap">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#ico-database"/></svg>
+          </div>
+          <h3 class="service-title">API &amp; Backend Engineering</h3>
+          <p class="service-desc">Architecting robust REST APIs, ERP integrations, and database management with MySQL, MongoDB, and PostgreSQL. Comfortable leading backend teams, managing repositories, and deploying to production environments.</p>
+          <div class="service-tags">
+            <span>Express.js</span><span>Spring Boot</span><span>MySQL</span><span>Strapi</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       SKILLS SECTION (standalone)
+  ══════════════════════════════════════════════ -->
+  <section class="section bg-light" id="skills">
     <div class="container">
 
       <div class="section-label">About Me</div>
       <h2 class="section-title">Technical <span class="accent">Skills</span></h2>
-      <p class="section-sub">Technologies I work with every day</p>
+      <p class="section-sub">Technologies I work with daily to build robust, scalable applications.</p>
 
-      <div class="skills-grid">
-        <div class="skill-card">
-          <div class="skill-icon">
-            <svg><use href="#ico-code"/></svg>
+      <div class="skillbars-wrapper">
+        <div class="skillbars-col">
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">JavaScript / HTML / CSS</span>
+              <span class="skill-bar-pct">92%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="92"></div></div>
           </div>
-          <h3>Languages</h3>
-          <ul>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>C++</li>
-          </ul>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">React &amp; Next.js</span>
+              <span class="skill-bar-pct">90%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Node.js / Express.js</span>
+              <span class="skill-bar-pct">85%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Python</span>
+              <span class="skill-bar-pct">82%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="82"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">TensorFlow / PyTorch (ML)</span>
+              <span class="skill-bar-pct">78%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="78"></div></div>
+          </div>
         </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <svg><use href="#ico-layers"/></svg>
+        <div class="skillbars-col">
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">React Native</span>
+              <span class="skill-bar-pct">80%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
           </div>
-          <h3>Frameworks</h3>
-          <ul>
-            <li>React &amp; Node.js</li>
-            <li>React Native</li>
-            <li>TensorFlow / PyTorch</li>
-            <li>Spring Boot</li>
-            <li>Next.js</li>
-            <li>Strapi</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <svg><use href="#ico-database"/></svg>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">MySQL / MongoDB / PostgreSQL</span>
+              <span class="skill-bar-pct">80%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
           </div>
-          <h3>Databases</h3>
-          <ul>
-            <li>MySQL</li>
-            <li>MongoDB</li>
-            <li>PostgreSQL</li>
-          </ul>
-        </div>
-        <div class="skill-card">
-          <div class="skill-icon">
-            <svg><use href="#ico-tool"/></svg>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">C++</span>
+              <span class="skill-bar-pct">75%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
           </div>
-          <h3>Tools</h3>
-          <ul>
-            <li>Git &amp; GitHub</li>
-            <li>Jira</li>
-            <li>BitBucket</li>
-          </ul>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Spring Boot / Strapi / Next.js</span>
+              <span class="skill-bar-pct">72%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="72"></div></div>
+          </div>
+          <div class="skill-bar-item">
+            <div class="skill-bar-header">
+              <span class="skill-bar-name">Git / Jira / BitBucket</span>
+              <span class="skill-bar-pct">88%</span>
+            </div>
+            <div class="skill-bar-track"><div class="skill-bar-fill" data-width="88"></div></div>
+          </div>
         </div>
       </div>
 
-      <!-- Work Experience -->
-      <div class="section-label" style="margin-top:5rem;">Experience</div>
-      <h2 class="section-title">Work <span class="accent">Experience</span></h2>
-      <p class="section-sub">Where I've built real-world systems</p>
+    </div>
+  </section>
 
-      <div class="exp-timeline">
-        <div class="exp-card">
+  <!-- ══════════════════════════════════════════════
+       RESUME — Education + Experience + Achievements
+  ══════════════════════════════════════════════ -->
+  <section class="section" id="resume">
+    <div class="container">
+
+      <div class="section-label">My Journey</div>
+      <h2 class="section-title">Resume &amp; <span class="accent">Experience</span></h2>
+      <p class="section-sub">A timeline of my education and professional growth.</p>
+
+      <!-- ── Education Sub-heading ──────────────────── -->
+      <div >
+        <div class="resume-sub-icon">
+          <svg class="inline-svg"><use href="#ico-graduation"/></svg>
+        </div>
+        <div class="resume-sub-text">
+          <h3 class="resume-sub-title">Education</h3>
+          <p class="resume-sub-desc">My academic background and qualifications</p>
+        </div>
+        <div class="resume-sub-line"></div>
+      </div>
+
+      <div class="exp-timeline" style="margin-bottom: 4rem;">
+
+        <div class="exp-card reveal">
+          <div class="exp-dot"></div>
+          <div class="exp-content">
+            <div class="exp-top">
+              <div>
+                <p class="exp-role">BSc. (Hons) in Computer Engineering</p>
+                <p class="exp-company">
+                  <svg class="inline-svg"><use href="#ico-building"/></svg>
+                  University of Jaffna, Sri Lanka
+                </p>
+              </div>
+              <div class="exp-right">
+                <span class="exp-badge"><span class="live-dot"></span> Present</span>
+                <span class="exp-date">2022 – Present</span>
+              </div>
+            </div>
+            <hr class="exp-divider" />
+            <div class="exp-desc">
+              <p>Currently pursuing an undergraduate degree in Computer Engineering with a strong focus on full-stack software development, machine learning, and embedded systems. Actively engaged in research on real-time computer vision, team-led academic projects, and extracurricular engineering societies.</p>
+            </div>
+            <div class="exp-tags">
+              <span>Computer Engineering</span><span>Machine Learning</span><span>Full-Stack Development</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-dot exp-dot-past"></div>
+          <div class="exp-content">
+            <div class="exp-top">
+              <div>
+                <p class="exp-role">Secondary Education — G.C.E. Advanced Level</p>
+                <p class="exp-company">
+                  <svg class="inline-svg"><use href="#ico-building"/></svg>
+                  Mt. Vijaya National College, Matale
+                </p>
+              </div>
+              <div class="exp-right">
+                <span class="exp-badge exp-badge-past">Completed</span>
+                <span class="exp-date">2012-2019</span>
+              </div>
+            </div>
+            <hr class="exp-divider" />
+            <div class="exp-desc">
+              <p>Completed secondary education with a strong academic foundation, studying the Physical Science stream at Advanced Level. Developed early interests in mathematics and technology that laid the groundwork for pursuing engineering at university level.</p>
+            </div>
+            <div class="exp-tags">
+              <span>Physical Science</span><span>Mathematics</span><span>A/L &amp; O/L</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- ── Work Experience Sub-heading ───────────── -->
+      <div >
+        <div class="resume-sub-icon resume-sub-icon--work">
+          <svg class="inline-svg"><use href="#ico-building"/></svg>
+        </div>
+        <div class="resume-sub-text">
+          <h3 class="resume-sub-title">Work Experience</h3>
+          <p class="resume-sub-desc">My professional journey and internships</p>
+        </div>
+        <div class="resume-sub-line"></div>
+      </div>
+
+      <div class="exp-timeline" style="margin-bottom: 4rem;">
+
+        <div class="exp-card reveal">
           <div class="exp-dot"></div>
           <div class="exp-content">
             <div class="exp-top">
@@ -236,29 +460,60 @@
                 </p>
               </div>
               <div class="exp-right">
-                <span class="exp-badge"><span class="live-dot"></span> Present</span>
-                <span class="exp-date">Nov 2025 – Present · 6 months</span>
+                <span class="exp-badge exp-badge-past">Completed</span>
+                <span class="exp-date">Nov 2025 – May 2026 · 6 months</span>
               </div>
             </div>
             <hr class="exp-divider" />
-            <ul class="exp-bullets">
-              <li><strong>Business Continuity Management System (BCMS)</strong> using the <strong>MERN stack</strong> (MongoDB, Express.js, React, Node.js).</li>
-              <p>Worked as a Full Stack Developer (Team Lead) on the BCMS project, leading the development team, managing the Bitbucket repository, and coordinating tasks. Contributed to full-stack feature development, and fixed critical bugs when integrating developments into hosted production server.</p>
-              <li><strong>Learning Path Management System (LPMS)</strong>using the <strong>PERN stack</strong> (PostgreSQL, Express.js, React, Node.js).</li>
-              <p>Worked as a Full Stack Developer on the LPMS for the HR Talent Development section.  Contributed to ERP integration by fetching and managing API data for employee and learning related modules. Gained experience in API integration, database management, and full-stack development while collaborating with the team. </p>
-            </ul>
+            <div class="exp-desc">
+              <p>Contributed to two enterprise-grade systems as a Full Stack Developer. On the <strong>Business Continuity Management System (BCMS)</strong> — built with the MERN stack — served as Team Lead, overseeing the Bitbucket repository, coordinating the development team, delivering full-stack features, and resolving critical integration bugs in the hosted production environment. On the <strong>Learning Path Management System (LPMS)</strong> — built with the PERN stack — worked on ERP integration, fetching and managing API data across employee and learning modules, strengthening expertise in API integration, database management, and collaborative full-stack development.</p>
+            </div>
             <div class="exp-tags">
-              <span>MongoDB</span><span>PostgreSQL</span><span>Express.js</span><span>React</span><span>Node.js</span>
+              <span>MongoDB</span><span>PostgreSQL</span><span>Express.js</span><span>React</span><span>Node.js</span><span>BitBucket</span>
             </div>
           </div>
         </div>
+
+        <div class="exp-card reveal">
+          <div class="exp-dot exp-dot-past"></div>
+          <div class="exp-content">
+            <div class="exp-top">
+              <div>
+                <p class="exp-role">Internship Trainee</p>
+                <p class="exp-company">
+                  <svg class="inline-svg"><use href="#ico-bank"/></svg>
+                  People's Bank — Rattota Branch
+                </p>
+              </div>
+              <div class="exp-right">
+                <span class="exp-badge exp-badge-past">Completed</span>
+                <span class="exp-date">Jan 2021 – Jan 2022 · 1 year</span>
+              </div>
+            </div>
+            <hr class="exp-divider" />
+            <div class="exp-desc">
+              <p>Gained well-rounded workplace experience across both front and back-office banking operations. Handled day-to-day customer engagement and assistance, managed back-office documentation and processing, and served in the bill counter role as chief cashier — building strong attention to detail, professionalism, and an understanding of structured financial workflows.</p>
+            </div>
+            <div class="exp-tags">
+              <span>Front-Office Operations</span><span>Back-Office Operations</span><span>Cash Management</span><span>Customer Service</span>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- Courses & Volunteering -->
-       <div class="section-label" style="margin-top:5rem;">Archivments</div>
-       <h2 class="section-title">My <span class="accent">Archivments</span></h2>
-      <div class="two-col-grid" style="margin-top:4rem;">
-        <div class="info-block">
+      <!-- ── Achievements ───────────────────────────── -->
+      <div class="resume-block-heading reveal">
+        <div class="resume-block-line"></div>
+        <span class="resume-block-label">
+          <svg class="inline-svg"><use href="#ico-cert"/></svg>
+          Achievements &amp; Memberships
+        </span>
+        <div class="resume-block-line"></div>
+      </div>
+
+      <div class="two-col-grid" style="margin-top:2rem;">
+        <div class="info-block reveal">
           <div class="info-label">
             <svg class="inline-svg"><use href="#ico-cert"/></svg>
             Courses &amp; Certifications
@@ -282,10 +537,10 @@
             </li>
           </ul>
         </div>
-        <div class="info-block">
+        <div class="info-block reveal">
           <div class="info-label">
             <svg class="inline-svg"><use href="#ico-heart"/></svg>
-            Volunteering
+            Volunteering &amp; Memberships
           </div>
           <ul class="check-list">
             <li>
@@ -303,13 +558,11 @@
     </div>
   </section>
 
-
   <!-- ══════════════════════════════════════════════
        PROJECTS
   ══════════════════════════════════════════════ -->
-  <section class="section" id="projects">
+  <section class="section bg-light" id="projects">
     <div class="container">
-
       <div class="section-label">Portfolio</div>
       <h2 class="section-title">Recent <span class="accent">Projects</span></h2>
       <p class="section-sub">
@@ -320,175 +573,215 @@
 
       <div class="project-grid">
 
-        <article class="project-card">
-          <div class="project-thumb">
-            <img src="assets/project8.png" alt="Hotel Management system" loading="lazy" />
+        <!-- ── ONGOING PROJECT 1 — E-Commerce ── -->
+        <article class="project-card project-card--ongoing reveal">
+          <div class="project-thumb project-thumb--placeholder">
+            <div class="project-thumb-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+            </div>
+            <div class="project-ongoing-badge">
+              <span class="ongoing-pulse"></span>
+              Ongoing
+            </div>
             <div class="project-overlay">
-<!--               <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-external"/></svg>
-              </a> -->
-              <a href="https://github.com/KanchanaAriyasinghe/hotel-system" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-github"/></svg>
-              </a>
+              <a href="https://github.com/KanchanaAriyasinghe/i-computers" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
             </div>
           </div>
           <div class="project-body">
-            <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB - Compass</span></div>
-            <h3>Luxury Hotel</h3>
-            <p>Full-stack MERN system for hotel management with customer features for browsing hotel details, viewing gallery images, and making online room bookings, Receptionist (booking management), Housekeeping (room cleaning, maintenance, and status updates), and Admin (managing rooms, staff, and overall operations).  </p>
-            <a href="https://github.com/KanchanaAriyasinghe/hotel-system" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-meta-row">
+              <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span><span>Tailwind CSS</span><span>JWT</span></div>
+            </div>
+            <h3>E-Commerce Web Application</h3>
+            <p>Full-stack e-commerce platform for managing and purchasing computer products. Features product search, cart, checkout, order placement, profile management, and an admin panel for products, users, orders, and reviews.</p>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              January 2026 – Present
+            </div>
+            <a href="https://github.com/KanchanaAriyasinghe/i-computers" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
-        <article class="project-card">
+        <!-- ── ONGOING PROJECT 2 — AI Video Learning ── -->
+        <article class="project-card project-card--ongoing reveal">
+          <div class="project-thumb project-thumb--placeholder project-thumb--ai">
+            <div class="project-thumb-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="23 7 16 12 23 17 23 7"/><rect x="1" y="5" width="15" height="14" rx="2" ry="2"/></svg>
+            </div>
+            <div class="project-ongoing-badge">
+              <span class="ongoing-pulse"></span>
+              Ongoing
+            </div>
+            <div class="project-overlay">
+              <a href="https://github.com/KanchanaAriyasinghe/smart-learning-assistant" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-meta-row">
+              <div class="project-tags"><span>Next.js</span><span>Strapi</span><span>PostgreSQL</span><span>OpenAI API</span></div>
+            </div>
+            <h3>AI-Powered Video Learning Assistant</h3>
+            <p>Full-stack AI learning platform that transforms educational videos into structured study materials. Includes video input handling, transcript processing, AI-generated summaries, quiz generation, semantic search, and personalized learning tracking.</p>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              April 2026 – Present
+            </div>
+            <a href="https://github.com/KanchanaAriyasinghe/smart-learning-assistant" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <!-- ── Existing Projects ── -->
+        <article class="project-card reveal">
+          <div class="project-thumb">
+            <img src="assets/project8.png" alt="Hotel Management system" loading="lazy" />
+            <div class="project-overlay">
+              <a href="https://github.com/KanchanaAriyasinghe/hotel-system" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
+            <h3>Luxury Hotel Management</h3>
+            <p>Full-stack MERN system with roles for customers, receptionists, housekeeping, and admin — covering bookings, room management, and operations.</p>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              Novermber 2025
+            </div>
+            <a href="https://github.com/KanchanaAriyasinghe/hotel-system" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
+          </div>
+        </article>
+
+        <article class="project-card reveal">
           <div class="project-thumb">
             <img src="assets/project1.png" alt="Computer Lab Booking System" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-external"/></svg>
-              </a>
-              <a href="https://github.com/KanchanaAriyasinghe/Computer-Lab-booking-and-equipments-borrowing" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-github"/></svg>
-              </a>
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="overlay-btn"><svg><use href="#ico-external"/></svg></a>
+              <a href="https://github.com/KanchanaAriyasinghe/Computer-Lab-booking-and-equipments-borrowing" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
             </div>
           </div>
           <div class="project-body">
             <div class="project-tags"><span>React</span><span>Node.js</span><span>MongoDB</span></div>
             <h3>Computer Lab Booking &amp; Equipment Borrowing</h3>
             <p>Full-stack MERN system for booking labs and borrowing equipment with real-time availability tracking.</p>
-            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              January 2025
+            </div>
+            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_mern-fullstackdevelopment-softwareengineering-activity-7338531798404018176-_Mb4" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-thumb">
             <img src="assets/project2.png" alt="Smart Medicine Reminder Box" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-external"/></svg>
-              </a>
-              <a href="https://github.com/BuddhiniNavoda/smart-medical-reminder-box-EC6020" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-github"/></svg>
-              </a>
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="overlay-btn"><svg><use href="#ico-external"/></svg></a>
+              <a href="https://github.com/BuddhiniNavoda/smart-medical-reminder-box-EC6020" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
             </div>
           </div>
           <div class="project-body">
             <div class="project-tags"><span>IoT</span><span>ESP32</span><span>Firebase</span></div>
             <h3>Smart Medicine Reminder Box</h3>
             <p>IoT-based device for automated medication tracking with real-time scheduling via Firebase-powered web interface.</p>
-            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              January 2025
+            </div>
+            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_iotinnovation-embeddedsolutions-esp32projects-activity-7323374191620091904-0H45" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-thumb">
             <img src="assets/project7.png" alt="Research AI Chatbot" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_ai-machinelearning-nlp-activity-7395024416532955136--301" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-external"/></svg>
-              </a>
-              <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-github"/></svg>
-              </a>
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_ai-machinelearning-nlp-activity-7395024416532955136--301" target="_blank" class="overlay-btn"><svg><use href="#ico-external"/></svg></a>
+              <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
             </div>
           </div>
           <div class="project-body">
             <div class="project-tags"><span>Python</span><span>Flask</span><span>Groq API</span></div>
             <h3>Research AI Chatbot</h3>
             <p>Intelligent assistant combining PDF analysis, academic paper discovery, and conversational AI for researchers.</p>
-            <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              November 2025
+            </div>
+            <a href="https://github.com/KanchanaAriyasinghe/research_chatbot" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-thumb">
             <img src="assets/project4.png" alt="Movie Finder" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-github"/></svg>
-              </a>
+              <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
             </div>
           </div>
           <div class="project-body">
             <div class="project-tags"><span>React</span><span>TMDB API</span><span>JavaScript</span></div>
             <h3>Movie Finder</h3>
             <p>A clean web application for discovering movies, browsing details, and exploring genres via the TMDB API.</p>
-            <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              June 2025    
+            </div>
+            <a href="https://github.com/KanchanaAriyasinghe/movie-website" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-thumb">
             <img src="assets/project3.png" alt="Currency Converter" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-github"/></svg>
-              </a>
+              <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
             </div>
           </div>
           <div class="project-body">
             <div class="project-tags"><span>React</span><span>Node.js</span><span>Exchange Rates API</span></div>
             <h3>Smart Currency Converter</h3>
             <p>Convert currencies using real-time and historical exchange rate data with a clean, intuitive interface.</p>
-            <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              June 2025    
+            </div>
+            <a href="https://github.com/KanchanaAriyasinghe/currency_app" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-thumb">
             <img src="assets/project5.png" alt="Student Feedback System" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-external"/></svg>
-              </a>
+              <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="overlay-btn"><svg><use href="#ico-external"/></svg></a>
             </div>
           </div>
           <div class="project-body">
             <div class="project-tags"><span>PHP</span><span>MySQL</span><span>HTML/CSS</span></div>
             <h3>Student Feedback Management</h3>
             <p>System to collect and manage course and lecturer feedback within the faculty with admin reporting.</p>
-            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+              January 2024
+            </div>
+            <a href="https://www.linkedin.com/posts/kanchana-ariyasinghe-ba76622b5_php-html-css-activity-7244577750760456192-DG5l" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
-        <article class="project-card">
+        <article class="project-card reveal">
           <div class="project-thumb">
             <img src="assets/project6.png" alt="Food Recipe App" loading="lazy" />
             <div class="project-overlay">
-              <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="overlay-btn">
-                <svg><use href="#ico-github"/></svg>
-              </a>
+              <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="overlay-btn"><svg><use href="#ico-github"/></svg></a>
             </div>
           </div>
           <div class="project-body">
             <div class="project-tags"><span>React</span><span>Node.js</span><span>JavaScript</span></div>
             <h3>Food Recipe App</h3>
             <p>Platform for discovering, creating, and sharing recipes with a full-stack React and Node.js architecture.</p>
-            <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="view-project-btn">
-              View project
-              <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg>
-            </a>
+            <div class="project-date">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                November 2025
+            </div>
+            <a href="https://github.com/KanchanaAriyasinghe/food_recipe_app" target="_blank" class="view-project-btn">View project <svg class="btn-icon-sm"><use href="#ico-arrow-right"/></svg></a>
           </div>
         </article>
 
@@ -496,27 +789,23 @@
     </div>
   </section>
 
-
   <!-- ══════════════════════════════════════════════
        RESEARCH
   ══════════════════════════════════════════════ -->
-  <section class="section bg-light" id="research">
+  <section class="section" id="research">
     <div class="container">
-
       <div class="section-label">Academic Work</div>
       <h2 class="section-title">My <span class="accent">Research</span></h2>
       <p class="section-sub">Exploring machine learning and computer vision to solve real-world infrastructure problems.</p>
 
-      <div class="research-card">
+      <div class="research-card reveal">
         <div class="research-card-header">
           <span class="status-badge"><span class="pulse-dot"></span> Ongoing Research</span>
           <div class="research-tech-stack">
             <span>YOLOv8m</span><span>MobileNetV2</span><span>CycleGAN</span><span>CLAHE</span><span>Deep Learning</span>
           </div>
         </div>
-
         <h3 class="research-title">Potholes Detection using Advanced Object Detection Techniques</h3>
-
         <div class="r-stats">
           <div class="r-stat">
             <span class="r-num">90.3%</span>
@@ -531,20 +820,12 @@
             <span class="r-lbl">Detection Speed</span>
           </div>
         </div>
-
         <div class="research-abstract">
-          <h4>
-            <svg class="inline-svg"><use href="#ico-text"/></svg>
-            Abstract
-          </h4>
+          <h4><svg class="inline-svg"><use href="#ico-text"/></svg> Abstract</h4>
           <p>Developed a real-time pothole detection system using an ensemble of YOLOv8m and MobileNetV2 models, achieving 90.3% accuracy across challenging conditions including low-light, rain, and cluttered environments. Integrated advanced preprocessing techniques (CycleGAN for domain adaptation, CLAHE for contrast enhancement), model optimization, and edge deployment for scalable smart road monitoring.</p>
         </div>
-
         <div class="video-section">
-          <h4 class="video-heading">
-            <svg class="inline-svg"><use href="#ico-play-circle"/></svg>
-            Demo Video
-          </h4>
+          <h4 class="video-heading"><svg class="inline-svg"><use href="#ico-play-circle"/></svg> Demo Video</h4>
           <div class="video-player">
             <div class="video-wrapper">
               <video id="researchVideo" preload="metadata">
@@ -559,9 +840,7 @@
             </div>
             <div class="video-controls-bar">
               <div class="vc-left">
-                <button class="vc-btn" id="playPauseBtn">
-                  <svg id="playIcon"><use href="#ico-play"/></svg>
-                </button>
+                <button class="vc-btn" id="playPauseBtn"><svg id="playIcon"><use href="#ico-play"/></svg></button>
                 <span class="vc-time" id="currentTime">0:00</span>
                 <span class="vc-sep">/</span>
                 <span class="vc-time" id="duration">0:00</span>
@@ -570,89 +849,148 @@
                 <div class="vc-progress-fill" id="progressFill"></div>
               </div>
               <div class="vc-right">
-                <button class="vc-btn" id="muteBtn">
-                  <svg id="volIcon"><use href="#ico-volume"/></svg>
-                </button>
-                <button class="vc-btn" id="fullscreenBtn">
-                  <svg><use href="#ico-expand"/></svg>
-                </button>
-                <a href="assets/Media1.mp4" download class="vc-btn">
-                  <svg><use href="#ico-download"/></svg>
-                </a>
+                <button class="vc-btn" id="muteBtn"><svg id="volIcon"><use href="#ico-volume"/></svg></button>
+                <button class="vc-btn" id="fullscreenBtn"><svg><use href="#ico-expand"/></svg></button>
+                <a href="assets/Media1.mp4" download class="vc-btn"><svg><use href="#ico-download"/></svg></a>
               </div>
             </div>
           </div>
           <p class="video-caption">The demo shows the YOLOv8m + MobileNetV2 ensemble detecting potholes in real-time under low-light and wet-road conditions.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════════
+       PROFESSIONAL REFERENCES
+  ══════════════════════════════════════════════ -->
+  <section class="section bg-light" id="references">
+    <div class="container">
+      <div class="section-label">Professional References</div>
+      <h2 class="section-title">Trusted Academic <span class="accent">&amp; Industry References</span></h2>
+      <p class="section-sub">References from academic mentors and industry professionals who can verify my technical skills, project experience, and professional work ethic.</p>
+
+      <div class="ref-grid">
+
+        <!-- Reference 1 — Industry -->
+        <div class="ref-card reveal">
+          <div class="ref-card-top">
+            <div class="ref-avatar ref-avatar--industry">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="ref-badge-wrap">
+              <span class="ref-type-badge ref-type-industry">Industry</span>
+            </div>
+          </div>
+          <div class="ref-card-body">
+            <h3 class="ref-name">Eng. (Mr.) Uditha Gamage</h3>
+            <p class="ref-title">Senior Business Continuity Manager</p>
+            <p class="ref-subtitle">Business Continuity Consultant &amp; Corporate Trainer</p>
+            <div class="ref-divider"></div>
+            <div class="ref-org">
+              <div class="ref-org-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg>
+              </div>
+              <span>Sri Lanka Telecom, Head Office, Sri Lanka</span>
+            </div>
+            <div class="ref-contacts">
+              <a href="mailto:udithag@slt.com.lk" class="ref-contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                udithag@slt.com.lk
+              </a>
+              <a href="https://www.linkedin.com/in/uditha-gamage-95139038" target="_blank" rel="noopener noreferrer" class="ref-contact-link ref-contact-link--linkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Reference 2 — Academic -->
+        <div class="ref-card reveal">
+          <div class="ref-card-top">
+            <div class="ref-avatar ref-avatar--academic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="ref-badge-wrap">
+              <span class="ref-type-badge ref-type-academic">Academic</span>
+            </div>
+          </div>
+          <div class="ref-card-body">
+            <h3 class="ref-name">Dr. (Mrs.) J. Jananie</h3>
+            <p class="ref-title">Senior Lecturer Grade II</p>
+            <p class="ref-subtitle">Department of Computer Engineering, Faculty of Engineering</p>
+            <div class="ref-divider"></div>
+            <div class="ref-org">
+              <div class="ref-org-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg>
+              </div>
+              <span>University of Jaffna, Sri Lanka</span>
+            </div>
+            <div class="ref-contacts">
+              <a href="mailto:jananie@eng.jfn.ac.lk" class="ref-contact-link">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+                jananie@eng.jfn.ac.lk
+              </a>
+              <a href="https://www.linkedin.com/in/jananie-jarachanthan-694b9772" target="_blank" rel="noopener noreferrer" class="ref-contact-link ref-contact-link--linkedin">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg>
+                LinkedIn Profile
+              </a>
+            </div>
+          </div>
         </div>
 
       </div>
     </div>
   </section>
 
-
   <!-- ══════════════════════════════════════════════
        CONTACT
   ══════════════════════════════════════════════ -->
   <section class="section" id="contact">
     <div class="container">
-
       <div class="section-label">Get In Touch</div>
       <h2 class="section-title">Contact <span class="accent">Me</span></h2>
       <p class="section-sub">Have a project in mind or just want to say hello? I'd love to hear from you.</p>
 
       <div class="contact-grid">
-
         <div class="contact-info">
+
+          <a href="https://www.google.com/maps/search/Matale,+Sri+Lanka" target="_blank" rel="noopener noreferrer" class="contact-card contact-card--location">
+            <div class="contact-icon contact-icon--location">
+              <svg><use href="#ico-map-pin"/></svg>
+            </div>
+            <div>
+              <p class="contact-card-label">Location</p>
+              <p class="contact-card-value">Matale, Sri Lanka</p>
+              <p class="contact-location-sub">View on Google Maps ↗</p>
+            </div>
+          </a>
 
           <a href="mailto:ariyasinghekanchana@gmail.com" class="contact-card">
             <div class="contact-icon"><svg><use href="#ico-mail"/></svg></div>
-            <div>
-              <p class="contact-card-label">Email</p>
-              <p class="contact-card-value">ariyasinghekanchana@gmail.com</p>
-            </div>
+            <div><p class="contact-card-label">Email</p><p class="contact-card-value">ariyasinghekanchana@gmail.com</p></div>
           </a>
-
           <a href="https://wa.me/94760251767" target="_blank" rel="noopener noreferrer" class="contact-card">
             <div class="contact-icon"><svg><use href="#ico-whatsapp"/></svg></div>
-            <div>
-              <p class="contact-card-label">WhatsApp</p>
-              <p class="contact-card-value">+94 76 025 1767</p>
-            </div>
+            <div><p class="contact-card-label">WhatsApp</p><p class="contact-card-value">+94 76 025 1767</p></div>
           </a>
-
           <div class="contact-card">
-                      <div class="contact-icon"><svg><use href="#ico-phone"/></svg></div>
-            <div>
-              <p class="contact-card-label">Telephone</p>
-              <p class="contact-card-value">+94 72 236 7866</p>
-        </div>
-
+            <div class="contact-icon"><svg><use href="#ico-phone"/></svg></div>
+            <div><p class="contact-card-label">Telephone</p><p class="contact-card-value">+94 72 236 7866</p></div>
           </div>
-
           <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" rel="noopener noreferrer" class="contact-card">
             <div class="contact-icon"><svg><use href="#ico-linkedin"/></svg></div>
-            <div>
-              <p class="contact-card-label">LinkedIn</p>
-              <p class="contact-card-value">Kanchana Ariyasinghe</p>
-            </div>
+            <div><p class="contact-card-label">LinkedIn</p><p class="contact-card-value">Kanchana Ariyasinghe</p></div>
           </a>
-
           <a href="https://github.com/KanchanaAriyasinghe" target="_blank" rel="noopener noreferrer" class="contact-card">
             <div class="contact-icon"><svg><use href="#ico-github"/></svg></div>
-            <div>
-              <p class="contact-card-label">GitHub</p>
-              <p class="contact-card-value">KanchanaAriyasinghe</p>
-            </div>
+            <div><p class="contact-card-label">GitHub</p><p class="contact-card-value">KanchanaAriyasinghe</p></div>
           </a>
-
           <a href="https://web.facebook.com/kanchana.ariyasinghe.12" target="_blank" rel="noopener noreferrer" class="contact-card">
             <div class="contact-icon"><svg><use href="#ico-facebook"/></svg></div>
-            <div>
-              <p class="contact-card-label">Facebook</p>
-              <p class="contact-card-value">Kanchana Ariyasinghe</p>
-            </div>
+            <div><p class="contact-card-label">Facebook</p><p class="contact-card-value">Kanchana Ariyasinghe</p></div>
           </a>
-
         </div>
 
         <div class="contact-form-wrap">
@@ -679,31 +1017,24 @@
               <label for="message">Message *</label>
               <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
-
             <div class="form-status" id="formStatus"></div>
-
             <button type="submit" class="btn-submit" id="submitBtn">
-              Send Message
-              <svg class="btn-icon" id="submitIcon"><use href="#ico-send"/></svg>
+              Send Message <svg class="btn-icon" id="submitIcon"><use href="#ico-send"/></svg>
             </button>
           </form>
         </div>
-
       </div>
     </div>
   </section>
 
-
-  <!-- ══════════════════════════════════════════════
-       FOOTER
-  ══════════════════════════════════════════════ -->
+  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-inner">
       <span class="footer-logo">Kanchana<span>.</span></span>
       <p class="footer-copy">&copy; 2025 Kanchana Ariyasinghe. All rights reserved.</p>
       <div class="footer-socials">
-        <a href="https://www.facebook.com/" target="_blank" aria-label="Facebook"><svg><use href="#ico-facebook"/></svg></a>
-        <a href="https://www.instagram.com/" target="_blank" aria-label="Instagram"><svg><use href="#ico-instagram"/></svg></a>
+        <a href="https://web.facebook.com/kanchana.ariyasinghe.12" target="_blank" aria-label="Facebook"><svg><use href="#ico-facebook"/></svg></a>
+        <a href="https://www.instagram.com/kanchi_gayathree" target="_blank" aria-label="Instagram"><svg><use href="#ico-instagram"/></svg></a>
         <a href="https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5" target="_blank" aria-label="LinkedIn"><svg><use href="#ico-linkedin"/></svg></a>
         <a href="https://github.com/KanchanaAriyasinghe" target="_blank" aria-label="GitHub"><svg><use href="#ico-github"/></svg></a>
       </div>
