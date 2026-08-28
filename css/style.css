@@ -735,3 +735,16 @@ svg { width: 1em; height: 1em; vertical-align: middle; flex-shrink: 0; }
   .skillbars-wrapper { gap: 0.75rem; }
   .skillbars-col { gap: 1.25rem; }
 }
+
+.project-buttons {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+.project-buttons .view-project-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
