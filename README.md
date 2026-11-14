@@ -29,29 +29,35 @@ Requires Node 20+.
 
 All text lives in **`src/data/`**. You don't need to touch any components:
 
-| File | What it holds |
-| --- | --- |
-| `profile.ts` | Name, bio, photo, nav, social links, stats, resume-button toggle |
-| `services.ts` | “My Services” cards (`hidden: true` hides one) |
-| `skills.ts` | Skill groups (mirrors the CV “Technical Skills” section) |
-| `resume.ts` | Experience, education, certifications, memberships (dates are `YYYY-MM`; omit `end` for a current role) |
-| `projects.ts` | Projects (`category` drives the filters, `hidden: true` hides one) |
-| `research.ts` | Research card and demo video |
-| `contact.ts` | References and contact methods |
+| File          | What it holds                                                                                           |
+| ------------- | ------------------------------------------------------------------------------------------------------- |
+| `profile.ts`  | Name, bio, photo, social links, stats, resume-button toggle                                             |
+| `services.ts` | “My Services” cards (`hidden: true` hides one)                                                          |
+| `skills.ts`   | Skill groups (mirrors the CV “Technical Skills” section)                                                |
+| `resume.ts`   | Experience, education, certifications, memberships (dates are `YYYY-MM`; omit `end` for a current role) |
+| `projects.ts` | Projects (`category` drives the filters, `hidden: true` hides one)                                      |
+| `research.ts` | Research card and demo video                                                                            |
+| `contact.ts`  | References and contact methods                                                                          |
 
 Images, the CV and the video are in `public/assets/`.
+
+### Reordering sections
+
+The page order lives in one array, `pageSections` in **`src/sections.ts`**. It drives the page layout, the
+navigation menu, scroll-spy and the alternating section backgrounds — move an entry and everything follows.
 
 ## Project structure
 
 ```
 src/
+  sections.ts   Page section order + nav labels (single source of truth)
   components/
     layout/     Header, Footer, ScrollToTop
-    sections/   Hero, Stats, Services, Skills, Resume, Projects, Research, References, Contact
-    ui/         Icon, SectionHeading, TagList, ExternalLink, SocialLinks
+    sections/   Hero, Stats, Resume (Experience), Projects, Services, Skills, Research, References, Contact
+    ui/         Section, SectionHeading, Icon, TagList, ExternalLink, SocialLinks
   data/         All site content (typed)
   hooks/        useInView, useCountUp, useScrollSpy, useTheme, …
-  lib/          asset path helper, EmailJS client
+  lib/          asset path, dates, section helpers, EmailJS client
   styles/       tokens.css (colours, type, spacing) · base.css · components.css · sections.css
 ```
 

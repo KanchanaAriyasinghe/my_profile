@@ -3,6 +3,8 @@ import { useReveal } from '../../hooks/useInView';
 import type { Reference } from '../../types';
 import { ExternalLink } from '../ui/ExternalLink';
 import { Icon } from '../ui/Icon';
+import { headingId, type SectionProps } from '../../lib/section';
+import { Section } from '../ui/Section';
 import { SectionHeading } from '../ui/SectionHeading';
 
 const HONORIFIC = /^(dr|eng|mr|mrs|ms|prof)\.?$|^\(.*\)$/i;
@@ -56,20 +58,17 @@ function ReferenceCard({ person }: { person: Reference }) {
   );
 }
 
-export function References() {
+export function References({ id, muted }: SectionProps) {
   return (
-    <section className="section section--muted" id="references" aria-labelledby="references-title">
-      <div className="container">
-        <SectionHeading id="references-title" label="References" title="People who can" accent="vouch for me">
-          Academic mentors and industry professionals who can speak to my technical skills, project work and work
-          ethic.
-        </SectionHeading>
-        <div className="ref-grid">
-          {references.map((r) => (
-            <ReferenceCard key={r.email} person={r} />
-          ))}
-        </div>
+    <Section id={id} muted={muted}>
+      <SectionHeading id={headingId(id)} label="References" title="People who can" accent="vouch for me">
+        Academic mentors and industry professionals who can speak to my technical skills, project work and work ethic.
+      </SectionHeading>
+      <div className="ref-grid">
+        {references.map((r) => (
+          <ReferenceCard key={r.email} person={r} />
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }

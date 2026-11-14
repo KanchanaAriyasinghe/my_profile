@@ -1,13 +1,14 @@
 import { useEffect, useRef, useState } from 'react';
-import { navItems, profile } from '../../data/profile';
+import { profile } from '../../data/profile';
 import { useScrolledPast } from '../../hooks/useScrollPosition';
 import { useScrollSpy } from '../../hooks/useScrollSpy';
 import { useTheme } from '../../hooks/useTheme';
+import { pageSections } from '../../sections';
 import { Icon } from '../ui/Icon';
 
-const sectionIds = navItems.map((n) => n.id);
-// The brand already links home, so it isn't repeated in the menu.
-const menuItems = navItems.filter((n) => n.id !== 'home');
+// The brand links to #home, so the menu only lists the page sections.
+const menuItems = pageSections.map(({ id, label }) => ({ id, label }));
+const sectionIds = ['home', ...menuItems.map((n) => n.id)];
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);

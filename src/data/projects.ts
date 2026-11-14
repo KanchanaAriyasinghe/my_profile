@@ -43,7 +43,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Computer Lab Booking & Equipment Borrowing',
-    description: 'Full-stack MERN system for booking labs and borrowing equipment with real-time availability tracking.',
+    description:
+      'Full-stack MERN system for booking labs and borrowing equipment with real-time availability tracking.',
     image: asset('assets/project1.png'),
     date: 'January 2025',
     tags: ['React', 'Node.js', 'MongoDB'],
@@ -78,7 +79,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Movie Finder',
-    description: 'A clean web application for discovering movies, browsing details, and exploring genres via the TMDB API.',
+    description:
+      'A clean web application for discovering movies, browsing details, and exploring genres via the TMDB API.',
     image: asset('assets/project4.png'),
     date: 'June 2025',
     tags: ['React', 'TMDB API', 'JavaScript'],
@@ -88,7 +90,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Smart Currency Converter',
-    description: 'Convert currencies using real-time and historical exchange rate data with a clean, intuitive interface.',
+    description:
+      'Convert currencies using real-time and historical exchange rate data with a clean, intuitive interface.',
     image: asset('assets/project3.png'),
     date: 'June 2025',
     tags: ['React', 'Node.js', 'Exchange Rates API'],
@@ -108,7 +111,8 @@ export const projects: Project[] = [
   },
   {
     title: 'Food Recipe App',
-    description: 'Platform for discovering, creating, and sharing recipes with a full-stack React and Node.js architecture.',
+    description:
+      'Platform for discovering, creating, and sharing recipes with a full-stack React and Node.js architecture.',
     image: asset('assets/project6.png'),
     date: 'November 2025',
     tags: ['React', 'Node.js', 'JavaScript'],

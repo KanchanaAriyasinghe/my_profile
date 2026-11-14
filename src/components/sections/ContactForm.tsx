@@ -125,12 +125,12 @@ export function ContactForm() {
           <label htmlFor={fieldId('firstName')}>
             First Name <span aria-hidden="true">*</span>
           </label>
-          <input type="text" autoComplete="given-name" placeholder="John" required {...fieldProps('firstName')} />
+          <input type="text" autoComplete="given-name" placeholder="Kanchana" required {...fieldProps('firstName')} />
           {errorText('firstName')}
         </div>
         <div className="form-group">
           <label htmlFor={fieldId('lastName')}>Last Name</label>
-          <input type="text" autoComplete="family-name" placeholder="Doe" {...fieldProps('lastName')} />
+          <input type="text" autoComplete="family-name" placeholder="Ariyasinghe" {...fieldProps('lastName')} />
         </div>
       </div>
 
@@ -138,7 +138,7 @@ export function ContactForm() {
         <label htmlFor={fieldId('email')}>
           Email Address <span aria-hidden="true">*</span>
         </label>
-        <input type="email" autoComplete="email" placeholder="you@example.com" required {...fieldProps('email')} />
+        <input type="email" autoComplete="email" placeholder="ariyasinghekanchana@gmail.com" required {...fieldProps('email')} />
         {errorText('email')}
       </div>
 

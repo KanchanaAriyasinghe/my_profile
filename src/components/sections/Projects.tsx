@@ -4,6 +4,8 @@ import { useReveal } from '../../hooks/useInView';
 import { PROJECT_CATEGORIES, type Project, type ProjectCategory } from '../../types';
 import { ExternalLink } from '../ui/ExternalLink';
 import { Icon } from '../ui/Icon';
+import { headingId, type SectionProps } from '../../lib/section';
+import { Section } from '../ui/Section';
 import { SectionHeading } from '../ui/SectionHeading';
 import { TagList } from '../ui/TagList';
 
@@ -63,52 +65,47 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
   );
 }
 
-export function Projects() {
+export function Projects({ id, muted }: SectionProps) {
   const [filter, setFilter] = useState<Filter>('All');
 
   // Only offer categories that actually have projects.
-  const filters = useMemo<Filter[]>(
-    () => ['All', ...PROJECT_CATEGORIES.filter((c) => countFor(c) > 0)],
-    [],
-  );
+  const filters = useMemo<Filter[]>(() => ['All', ...PROJECT_CATEGORIES.filter((c) => countFor(c) > 0)], []);
   const shown = filter === 'All' ? visibleProjects : visibleProjects.filter((p) => p.category === filter);
 
   return (
-    <section className="section section--muted" id="projects" aria-labelledby="projects-title">
-      <div className="container">
-        <SectionHeading id="projects-title" label="Portfolio" title="Selected" accent="projects">
-          A mix of full-stack products, AI tools and IoT builds. Have something in mind?{' '}
-          <a href="#contact" className="text-link">
-            Let's build it together.
-          </a>
-        </SectionHeading>
+    <Section id={id} muted={muted}>
+      <SectionHeading id={headingId(id)} label="Portfolio" title="Selected" accent="projects">
+        A mix of full-stack products, AI tools and IoT builds. Have something in mind?{' '}
+        <a href="#contact" className="text-link">
+          Let's build it together.
+        </a>
+      </SectionHeading>
 
-        <div className="segmented" role="group" aria-label="Filter projects by category">
-          {filters.map((f) => (
-            <button
-              key={f}
-              type="button"
-              className={`segmented-btn${filter === f ? ' is-active' : ''}`}
-              aria-pressed={filter === f}
-              onClick={() => setFilter(f)}
-            >
-              {f}
-              <span className="segmented-count">{countFor(f)}</span>
-            </button>
-          ))}
-        </div>
-
-        <p className="sr-only" aria-live="polite">
-          Showing {shown.length} project{shown.length === 1 ? '' : 's'}
-          {filter === 'All' ? '' : ` in ${filter}`}
-        </p>
-
-        <div className="project-grid">
-          {shown.map((project, i) => (
-            <ProjectCard key={project.title} project={project} index={i} />
-          ))}
-        </div>
+      <div className="segmented" role="group" aria-label="Filter projects by category">
+        {filters.map((f) => (
+          <button
+            key={f}
+            type="button"
+            className={`segmented-btn${filter === f ? ' is-active' : ''}`}
+            aria-pressed={filter === f}
+            onClick={() => setFilter(f)}
+          >
+            {f}
+            <span className="segmented-count">{countFor(f)}</span>
+          </button>
+        ))}
       </div>
-    </section>
+
+      <p className="sr-only" aria-live="polite">
+        Showing {shown.length} project{shown.length === 1 ? '' : 's'}
+        {filter === 'All' ? '' : ` in ${filter}`}
+      </p>
+
+      <div className="project-grid">
+        {shown.map((project, i) => (
+          <ProjectCard key={project.title} project={project} index={i} />
+        ))}
+      </div>
+    </Section>
   );
 }

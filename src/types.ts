@@ -1,10 +1,5 @@
 import type { IconName } from './components/ui/Icon';
 
-export interface NavItem {
-  id: string;
-  label: string;
-}
-
 export interface SocialLink {
   label: string;
   href: string;

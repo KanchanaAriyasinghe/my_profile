@@ -103,7 +103,18 @@ export const experience: TimelineEntry[] = [
         text: 'Identified and resolved technical issues across frontend, backend, API integration, and database layers.',
       },
     ],
-    tags: ['React', 'Node.js', 'Express.js', 'MongoDB', 'PostgreSQL', 'JWT', 'REST APIs', 'ERP Integration', 'GitHub', 'Bitbucket'],
+    tags: [
+      'React',
+      'Node.js',
+      'Express.js',
+      'MongoDB',
+      'PostgreSQL',
+      'JWT',
+      'REST APIs',
+      'ERP Integration',
+      'GitHub',
+      'Bitbucket',
+    ],
   },
   {
     // Not on the current CV — hidden, but kept so it can be re-enabled.

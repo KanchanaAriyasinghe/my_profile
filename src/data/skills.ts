@@ -11,7 +11,11 @@ export const skillGroups: SkillGroup[] = [
     icon: 'cloud',
     items: ['Docker', 'Jenkins', 'Maven', 'GitLab CI', 'AWS EC2', 'Nginx', 'Cloudflare', 'Vercel', 'Render', 'Railway'],
   },
-  { title: 'Testing & Quality', icon: 'check-square', items: ['Functional Testing', 'Selenium', 'TestNG', 'SonarQube', 'Postman'] },
+  {
+    title: 'Testing & Quality',
+    icon: 'check-square',
+    items: ['Functional Testing', 'Selenium', 'TestNG', 'SonarQube', 'Postman'],
+  },
   { title: 'Security & Auth', icon: 'shield', items: ['JWT', 'OAuth 2.0', 'Clerk', 'RBAC'] },
   { title: 'ML & Computer Vision', icon: 'brain', items: ['TensorFlow', 'Keras', 'NumPy', 'YOLOv8', 'MobileNetV2'] },
   { title: 'Tools & Workflow', icon: 'tool', items: ['Git', 'GitHub', 'Bitbucket', 'Jira', 'Agile', 'Figma', 'XAMPP'] },

@@ -40,5 +40,10 @@ export const contactMethods: ContactMethod[] = [
     href: 'https://www.linkedin.com/in/kanchana-ariyasinghe-ba76622b5',
   },
   { label: 'GitHub', value: 'KanchanaAriyasinghe', icon: 'github', href: 'https://github.com/KanchanaAriyasinghe' },
-  { label: 'Facebook', value: profile.fullName, icon: 'facebook', href: 'https://web.facebook.com/kanchana.ariyasinghe.12' },
+  {
+    label: 'Facebook',
+    value: profile.fullName,
+    icon: 'facebook',
+    href: 'https://web.facebook.com/kanchana.ariyasinghe.12',
+  },
 ];

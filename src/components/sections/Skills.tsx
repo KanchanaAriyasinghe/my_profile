@@ -2,25 +2,27 @@ import { skillGroups } from '../../data/skills';
 import { useReveal } from '../../hooks/useInView';
 import type { SkillGroup } from '../../types';
 import { Icon } from '../ui/Icon';
+import { headingId, type SectionProps } from '../../lib/section';
+import { Section } from '../ui/Section';
 import { SectionHeading } from '../ui/SectionHeading';
 import { TagList } from '../ui/TagList';
 
 function SkillCard({ group, index }: { group: SkillGroup; index: number }) {
   const { ref, revealClass } = useReveal<HTMLLIElement>();
-  const headingId = `skill-${index}`;
+  const titleId = `skill-${index}`;
 
   return (
     <li
       ref={ref}
       className={`card card--interactive skill-group ${revealClass}`}
       style={{ animationDelay: `${(index % 3) * 80}ms` }}
-      aria-labelledby={headingId}
+      aria-labelledby={titleId}
     >
       <div className="skill-group-head">
         <span className="icon-tile icon-tile--sm">
           <Icon name={group.icon} />
         </span>
-        <h3 id={headingId}>{group.title}</h3>
+        <h3 id={titleId}>{group.title}</h3>
         <span className="skill-count" aria-hidden="true">
           {String(group.items.length).padStart(2, '0')}
         </span>
@@ -30,19 +32,17 @@ function SkillCard({ group, index }: { group: SkillGroup; index: number }) {
   );
 }
 
-export function Skills() {
+export function Skills({ id, muted }: SectionProps) {
   return (
-    <section className="section section--muted" id="skills" aria-labelledby="skills-title">
-      <div className="container">
-        <SectionHeading id="skills-title" label="Toolkit" title="Technical" accent="skills">
-          The languages, frameworks and tools I use to design, build, test and ship software.
-        </SectionHeading>
-        <ul className="skills-grid">
-          {skillGroups.map((group, i) => (
-            <SkillCard key={group.title} group={group} index={i} />
-          ))}
-        </ul>
-      </div>
-    </section>
+    <Section id={id} muted={muted}>
+      <SectionHeading id={headingId(id)} label="Toolkit" title="Technical" accent="skills">
+        The languages, frameworks and tools I use to design, build, test and ship software.
+      </SectionHeading>
+      <ul className="skills-grid">
+        {skillGroups.map((group, i) => (
+          <SkillCard key={group.title} group={group} index={i} />
+        ))}
+      </ul>
+    </Section>
   );
 }

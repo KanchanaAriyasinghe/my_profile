@@ -1,6 +1,6 @@
 import { asset } from '../lib/asset';
 import { monthsBetween } from '../lib/dates';
-import type { NavItem, SocialLink, Stat } from '../types';
+import type { SocialLink, Stat } from '../types';
 import { experience } from './resume';
 
 export const profile = {
@@ -29,17 +29,6 @@ export const profile = {
   resumeUrl: asset('assets/Kanchana Ariyasinghe CV.pdf'),
 };
 
-export const navItems: NavItem[] = [
-  { id: 'home', label: 'Home' },
-  { id: 'services', label: 'Services' },
-  { id: 'skills', label: 'Skills' },
-  { id: 'resume', label: 'Resume' },
-  { id: 'projects', label: 'Projects' },
-  { id: 'research', label: 'Research' },
-  { id: 'references', label: 'References' },
-  { id: 'contact', label: 'Contact' },
-];
-
 export const socialLinks: SocialLink[] = [
   { label: 'Facebook', href: 'https://web.facebook.com/kanchana.ariyasinghe.12', icon: 'facebook' },
   { label: 'Instagram', href: 'https://www.instagram.com/kanchi_gayathree', icon: 'instagram' },
@@ -48,9 +37,7 @@ export const socialLinks: SocialLink[] = [
 ];
 
 /** Total months across visible roles — stays correct as time passes. */
-const industryMonths = experience
-  .filter((e) => !e.hidden)
-  .reduce((sum, e) => sum + monthsBetween(e.start, e.end), 0);
+const industryMonths = experience.filter((e) => !e.hidden).reduce((sum, e) => sum + monthsBetween(e.start, e.end), 0);
 
 /** The role without an end date, if any (shown in the hero). */
 export const currentRole = experience.find((e) => !e.hidden && !e.end);

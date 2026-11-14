@@ -285,6 +285,7 @@
 }
 
 .stat-number {
+  color: var(--text);
   font-size: clamp(1.9rem, 3vw, 2.4rem);
   font-weight: 700;
   letter-spacing: -0.04em;
@@ -640,7 +641,7 @@
   padding: 24px 26px;
 }
 
-.list-card h4 {
+.list-card h3 {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -1388,8 +1389,6 @@ a.contact-row:hover .contact-arrow {
   opacity: 0.6;
   cursor: not-allowed;
 }
-
-
 
 @media (max-width: 560px) {
   .form-row {

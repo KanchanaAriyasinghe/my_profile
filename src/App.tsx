@@ -1,15 +1,9 @@
 import { Footer } from './components/layout/Footer';
 import { Header } from './components/layout/Header';
 import { ScrollToTop } from './components/layout/ScrollToTop';
-import { Contact } from './components/sections/Contact';
 import { Hero } from './components/sections/Hero';
-import { Projects } from './components/sections/Projects';
-import { References } from './components/sections/References';
-import { Research } from './components/sections/Research';
-import { Resume } from './components/sections/Resume';
-import { Services } from './components/sections/Services';
-import { Skills } from './components/sections/Skills';
 import { Stats } from './components/sections/Stats';
+import { pageSections } from './sections';
 
 export default function App() {
   return (
@@ -21,13 +15,10 @@ export default function App() {
       <main id="main" tabIndex={-1}>
         <Hero />
         <Stats />
-        <Services />
-        <Skills />
-        <Resume />
-        <Projects />
-        <Research />
-        <References />
-        <Contact />
+        {pageSections.map(({ id, Component }, i) => (
+          // Every second section gets the muted band, whatever the order.
+          <Component key={id} id={id} muted={i % 2 === 1} />
+        ))}
       </main>
       <Footer />
       <ScrollToTop />
