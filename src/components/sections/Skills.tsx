@@ -1,49 +1,47 @@
-import { SHOW_SKILL_PERCENT, skillColumns } from '../../data/skills';
-import { useInView } from '../../hooks/useInView';
-import type { Skill } from '../../types';
+import { skillGroups } from '../../data/skills';
+import { useReveal } from '../../hooks/useInView';
+import type { SkillGroup } from '../../types';
+import { Icon } from '../ui/Icon';
 import { SectionHeading } from '../ui/SectionHeading';
+import { TagList } from '../ui/TagList';
 
-function SkillBar({ skill }: { skill: Skill }) {
-  const { ref, inView } = useInView<HTMLLIElement>({ threshold: 0.3 });
+function SkillCard({ group, index }: { group: SkillGroup; index: number }) {
+  const { ref, revealClass } = useReveal<HTMLLIElement>();
+  const headingId = `skill-${index}`;
 
   return (
-    <li ref={ref} className={`skill-bar-item reveal${inView ? ' revealed' : ''}`}>
-      <div className="skill-bar-header">
-        <span className="skill-bar-name" id={`skill-${skill.name}`}>
-          {skill.name}
+    <li
+      ref={ref}
+      className={`card card--interactive skill-group ${revealClass}`}
+      style={{ animationDelay: `${(index % 3) * 80}ms` }}
+      aria-labelledby={headingId}
+    >
+      <div className="skill-group-head">
+        <span className="icon-tile icon-tile--sm">
+          <Icon name={group.icon} />
         </span>
-        {SHOW_SKILL_PERCENT && <span className="skill-bar-pct">{skill.level}%</span>}
+        <h3 id={headingId}>{group.title}</h3>
+        <span className="skill-count" aria-hidden="true">
+          {String(group.items.length).padStart(2, '0')}
+        </span>
       </div>
-      <div
-        className="skill-bar-track"
-        role="progressbar"
-        aria-labelledby={`skill-${skill.name}`}
-        aria-valuemin={0}
-        aria-valuemax={100}
-        aria-valuenow={skill.level}
-      >
-        <div className="skill-bar-fill" style={{ width: inView ? `${skill.level}%` : 0 }} />
-      </div>
+      <TagList tags={group.items} label={group.title} />
     </li>
   );
 }
 
 export function Skills() {
   return (
-    <section className="section bg-light" id="skills" aria-labelledby="skills-title">
+    <section className="section section--muted" id="skills" aria-labelledby="skills-title">
       <div className="container">
-        <SectionHeading id="skills-title" label="About Me" title="Technical" accent="Skills">
-          Technologies I work with daily to build robust, scalable applications.
+        <SectionHeading id="skills-title" label="Toolkit" title="Technical" accent="skills">
+          The languages, frameworks and tools I use to design, build, test and ship software.
         </SectionHeading>
-        <div className="skillbars-wrapper">
-          {skillColumns.map((column, i) => (
-            <ul className="skillbars-col" key={i}>
-              {column.map((skill) => (
-                <SkillBar key={skill.name} skill={skill} />
-              ))}
-            </ul>
+        <ul className="skills-grid">
+          {skillGroups.map((group, i) => (
+            <SkillCard key={group.title} group={group} index={i} />
           ))}
-        </div>
+        </ul>
       </div>
     </section>
   );

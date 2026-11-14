@@ -7,7 +7,7 @@ Built with **React + TypeScript + Vite**. Live at https://kanchanaariyasinghe.gi
 
 - Light / dark theme (follows the system setting, remembers your choice)
 - Project filtering by category
-- Animated stats, skill bars and scroll-reveal (respects “reduce motion”)
+- Animated stats and scroll-reveal (respects “reduce motion”); experience months are calculated from role dates
 - Accessible navigation: skip link, keyboard-friendly menu (Esc to close), focus rings, screen-reader labels
 - Custom video player with keyboard seeking
 - Contact form with inline validation, sent via EmailJS (falls back to a `mailto:` link)
@@ -33,8 +33,8 @@ All text lives in **`src/data/`**. You don't need to touch any components:
 | --- | --- |
 | `profile.ts` | Name, bio, photo, nav, social links, stats, resume-button toggle |
 | `services.ts` | “My Services” cards (`hidden: true` hides one) |
-| `skills.ts` | Skill bars (two columns) |
-| `resume.ts` | Education, experience, certifications, memberships |
+| `skills.ts` | Skill groups (mirrors the CV “Technical Skills” section) |
+| `resume.ts` | Experience, education, certifications, memberships (dates are `YYYY-MM`; omit `end` for a current role) |
 | `projects.ts` | Projects (`category` drives the filters, `hidden: true` hides one) |
 | `research.ts` | Research card and demo video |
 | `contact.ts` | References and contact methods |
@@ -52,7 +52,7 @@ src/
   data/         All site content (typed)
   hooks/        useInView, useCountUp, useScrollSpy, useTheme, …
   lib/          asset path helper, EmailJS client
-  styles/       global.css (design system) + enhancements.css (dark theme, a11y, filters)
+  styles/       tokens.css (colours, type, spacing) · base.css · components.css · sections.css
 ```
 
 ## Configuration

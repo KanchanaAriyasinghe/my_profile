@@ -2,12 +2,12 @@ import { useScrolledPast } from '../../hooks/useScrollPosition';
 import { Icon } from '../ui/Icon';
 
 export function ScrollToTop() {
-  const visible = useScrolledPast(400);
+  const visible = useScrolledPast(600);
 
   return (
     <button
       type="button"
-      className={`scroll-top${visible ? ' visible' : ''}`}
+      className={`icon-btn to-top${visible ? ' visible' : ''}`}
       aria-label="Scroll to top"
       tabIndex={visible ? 0 : -1}
       onClick={() => {

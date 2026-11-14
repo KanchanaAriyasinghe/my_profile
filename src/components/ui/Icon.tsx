@@ -195,6 +195,51 @@ const stroke: Record<string, ReactNode> = {
     </>
   ),
   moon: <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />,
+  layout: (
+    <>
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+      <line x1="3" y1="9" x2="21" y2="9" />
+      <line x1="9" y1="21" x2="9" y2="9" />
+    </>
+  ),
+  shield: (
+    <>
+      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+      <polyline points="9 12 11 14 15 10" />
+    </>
+  ),
+  cloud: <path d="M18 10h-1.26A8 8 0 1 0 9 20h9a5 5 0 0 0 0-10z" />,
+  terminal: (
+    <>
+      <polyline points="4 17 10 11 4 5" />
+      <line x1="12" y1="19" x2="20" y2="19" />
+    </>
+  ),
+  server: (
+    <>
+      <rect x="2" y="2" width="20" height="8" rx="2" ry="2" />
+      <rect x="2" y="14" width="20" height="8" rx="2" ry="2" />
+      <line x1="6" y1="6" x2="6.01" y2="6" />
+      <line x1="6" y1="18" x2="6.01" y2="18" />
+    </>
+  ),
+  tool: (
+    <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z" />
+  ),
+  'chevron-down': <polyline points="6 9 12 15 18 9" />,
+  menu: (
+    <>
+      <line x1="4" y1="7" x2="20" y2="7" />
+      <line x1="4" y1="12" x2="20" y2="12" />
+      <line x1="4" y1="17" x2="20" y2="17" />
+    </>
+  ),
+  x: (
+    <>
+      <line x1="18" y1="6" x2="6" y2="18" />
+      <line x1="6" y1="6" x2="18" y2="18" />
+    </>
+  ),
 };
 
 /** Solid icons (brand marks, media controls). */
@@ -226,7 +271,8 @@ export type IconName =
   | 'arrow-up' | 'arrow-right' | 'external' | 'download' | 'send' | 'code' | 'instagram' | 'mail'
   | 'phone' | 'building' | 'cert' | 'graduation' | 'heart' | 'volume' | 'mute' | 'expand' | 'text'
   | 'play-circle' | 'bank' | 'spinner' | 'map-pin' | 'users' | 'user' | 'globe' | 'brain' | 'pen'
-  | 'database' | 'eye' | 'check-square' | 'calendar' | 'sun' | 'moon'
+  | 'database' | 'eye' | 'check-square' | 'calendar' | 'sun' | 'moon' | 'layout' | 'shield' | 'cloud'
+  | 'terminal' | 'server' | 'tool' | 'chevron-down' | 'menu' | 'x'
   | 'facebook' | 'linkedin' | 'github' | 'whatsapp' | 'play' | 'pause';
 
 interface IconProps extends SVGProps<SVGSVGElement> {

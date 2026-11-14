@@ -6,22 +6,24 @@ import { useTheme } from '../../hooks/useTheme';
 import { Icon } from '../ui/Icon';
 
 const sectionIds = navItems.map((n) => n.id);
+// The brand already links home, so it isn't repeated in the menu.
+const menuItems = navItems.filter((n) => n.id !== 'home');
 
 export function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const scrolled = useScrolledPast(30);
+  const scrolled = useScrolledPast(16);
   const active = useScrollSpy(sectionIds);
   const { theme, toggle } = useTheme();
   const headerRef = useRef<HTMLElement>(null);
 
-  // Close the mobile menu on Escape, outside click, or when resizing up to desktop.
+  // Close the mobile menu on Escape, outside click, or when widening to desktop.
   useEffect(() => {
     if (!menuOpen) return;
     const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setMenuOpen(false);
     const onClick = (e: MouseEvent) => {
       if (!headerRef.current?.contains(e.target as Node)) setMenuOpen(false);
     };
-    const mql = window.matchMedia('(min-width: 769px)');
+    const mql = window.matchMedia('(min-width: 981px)');
     const onResize = () => mql.matches && setMenuOpen(false);
 
     document.addEventListener('keydown', onKey);
@@ -35,57 +37,60 @@ export function Header() {
   }, [menuOpen]);
 
   const isDark = theme === 'dark';
+  const classes = ['site-header', scrolled && 'is-scrolled', menuOpen && 'is-open'].filter(Boolean).join(' ');
 
   return (
-    <header ref={headerRef} className={`header${scrolled ? ' scrolled' : ''}`}>
-      <div className="container nav-inner">
-        <a href="#home" className="logo" aria-label={`${profile.fullName} — home`}>
-          {profile.firstName}
-          <span>.</span>
-        </a>
-
-        <nav id="primary-nav" className={`navbar${menuOpen ? ' open' : ''}`} aria-label="Primary">
-          <ul className="nav-list">
-            {navItems.map((item) => (
-              <li key={item.id}>
-                <a
-                  href={`#${item.id}`}
-                  className={`nav-link${active === item.id ? ' active' : ''}`}
-                  aria-current={active === item.id ? 'location' : undefined}
-                  onClick={() => setMenuOpen(false)}
-                >
-                  {item.label}
-                </a>
-              </li>
-            ))}
-          </ul>
-        </nav>
-
-        <div className="nav-actions">
-          <button
-            type="button"
-            className="theme-toggle"
-            onClick={toggle}
-            aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
-            title={isDark ? 'Light mode' : 'Dark mode'}
-          >
-            <Icon name={isDark ? 'sun' : 'moon'} />
-          </button>
-          <a href="#contact" className="btn-talk">
-            Hire Me
+    <header ref={headerRef} className={classes}>
+      <div className="container">
+        <div className="header-inner">
+          <a href="#home" className="brand" aria-label={`${profile.fullName} — back to top`}>
+            <span className="brand-mark" aria-hidden="true">
+              {profile.firstName[0]}
+            </span>
+            <span>{profile.firstName}</span>
           </a>
-          <button
-            type="button"
-            className={`hamburger${menuOpen ? ' open' : ''}`}
-            aria-label={menuOpen ? 'Close menu' : 'Open menu'}
-            aria-expanded={menuOpen}
-            aria-controls="primary-nav"
-            onClick={() => setMenuOpen((o) => !o)}
-          >
-            <span />
-            <span />
-            <span />
-          </button>
+
+          <nav id="primary-nav" className={`nav${menuOpen ? ' is-open' : ''}`} aria-label="Primary">
+            <ul className="nav-list">
+              {menuItems.map((item) => (
+                <li key={item.id}>
+                  <a
+                    href={`#${item.id}`}
+                    className={`nav-link${active === item.id ? ' is-active' : ''}`}
+                    aria-current={active === item.id ? 'location' : undefined}
+                    onClick={() => setMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </nav>
+
+          <div className="header-actions">
+            <button
+              type="button"
+              className="icon-btn"
+              onClick={toggle}
+              aria-label={isDark ? 'Switch to light theme' : 'Switch to dark theme'}
+              title={isDark ? 'Light mode' : 'Dark mode'}
+            >
+              <Icon name={isDark ? 'sun' : 'moon'} />
+            </button>
+            <a href="#contact" className="btn btn-primary btn-sm header-cta">
+              Let's talk
+            </a>
+            <button
+              type="button"
+              className="icon-btn nav-toggle"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={menuOpen}
+              aria-controls="primary-nav"
+              onClick={() => setMenuOpen((o) => !o)}
+            >
+              <Icon name={menuOpen ? 'x' : 'menu'} />
+            </button>
+          </div>
         </div>
       </div>
     </header>

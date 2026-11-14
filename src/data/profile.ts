@@ -1,11 +1,20 @@
 import { asset } from '../lib/asset';
+import { monthsBetween } from '../lib/dates';
 import type { NavItem, SocialLink, Stat } from '../types';
+import { experience } from './resume';
 
 export const profile = {
   firstName: 'Kanchana',
   fullName: 'Kanchana Ariyasinghe',
-  degree: 'Computer Engineering',
-  university: 'UOJ',
+  location: 'Matale, Sri Lanka',
+  degree: 'B.Sc.Eng (Hons) Computer Engineering',
+  university: 'University of Jaffna',
+  /** Hero headline: `before` + gradient `highlight` + `after`. */
+  headline: {
+    before: 'Software engineer building ',
+    highlight: 'full-stack web apps',
+    after: ', AI-powered systems and reliable, well-tested software.',
+  },
   roles: ['Software Engineer', 'Full-Stack Developer', 'QA Engineer'],
   bio:
     'Computer Engineering professional with a strong interest in Software Engineering and Full-Stack Development. ' +
@@ -38,9 +47,17 @@ export const socialLinks: SocialLink[] = [
   { label: 'GitHub', href: 'https://github.com/KanchanaAriyasinghe', icon: 'github' },
 ];
 
+/** Total months across visible roles — stays correct as time passes. */
+const industryMonths = experience
+  .filter((e) => !e.hidden)
+  .reduce((sum, e) => sum + monthsBetween(e.start, e.end), 0);
+
+/** The role without an end date, if any (shown in the hero). */
+export const currentRole = experience.find((e) => !e.hidden && !e.end);
+
 export const stats: Stat[] = [
   { value: 13, suffix: '+', label: 'Projects Completed', icon: 'check-square' },
-  { value: 6, label: 'Months Industrial Work Experience', icon: 'users' },
+  { value: industryMonths, suffix: '+', label: 'Months Industry Experience', icon: 'users' },
   { value: 4, suffix: '+', label: 'Certifications', icon: 'cert' },
   { value: 10, suffix: '+', label: 'Technologies', icon: 'code' },
   { value: 90, suffix: '%', label: 'Research Accuracy', icon: 'graduation' },

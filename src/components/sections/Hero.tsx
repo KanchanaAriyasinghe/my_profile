@@ -1,68 +1,98 @@
-import { profile } from '../../data/profile';
-import { Icon } from '../ui/Icon';
+import { currentRole, profile } from '../../data/profile';
+import { research } from '../../data/research';
 import { ExternalLink } from '../ui/ExternalLink';
+import { Icon } from '../ui/Icon';
 import { SocialLinks } from '../ui/SocialLinks';
 
 export function Hero() {
+  const { headline } = profile;
+  const accuracy = research.stats[0];
+
   return (
-    <section id="home" className="hero-section" aria-labelledby="hero-name">
-      <div className="hero-inner container">
-        <div className="hero-text">
+    <section id="home" className="hero" aria-labelledby="hero-name">
+      <div className="container hero-grid">
+        <div>
+          {profile.openToWork && (
+            <p className="status-pill">
+              <span className="live-dot" aria-hidden="true" />
+              Open to new opportunities
+            </p>
+          )}
+
           <p className="hero-greeting">Hi, I'm</p>
           <h1 className="hero-name" id="hero-name">
             {profile.fullName}
           </h1>
-          <p className="hero-role">
-            <span className="accent">{profile.degree}</span> | {profile.university}
-          </p>
-          <p className="hero-subtitle">
-            <span className="accent">{profile.roles.join(' | ')}</span>
+          <p className="hero-lead">
+            {headline.before}
+            <span className="text-gradient">{headline.highlight}</span>
+            {headline.after}
           </p>
           <p className="hero-bio">{profile.bio}</p>
 
-          <div className="hero-hire-wrap">
-            <a href="#contact" className="btn-hire">
-              <span className="btn-hire-icon">
-                <Icon name="user" />
-              </span>
-              <span className="btn-hire-text">Hire Me</span>
-              {profile.openToWork && <span className="btn-hire-badge">Open to Work</span>}
-            </a>
-          </div>
+          <ul className="hero-meta">
+            <li>
+              <Icon name="map-pin" />
+              {profile.location}
+            </li>
+            <li>
+              <Icon name="graduation" />
+              {profile.degree} · {profile.university}
+            </li>
+          </ul>
 
-          <div className="hero-cta">
-            <a href="#projects" className="btn-primary">
-              Projects <Icon name="code" className="btn-icon" />
+          <div className="hero-actions">
+            <a href="#projects" className="btn btn-primary">
+              View projects <Icon name="arrow-right" />
+            </a>
+            <a href="#contact" className="btn btn-secondary">
+              Contact me
             </a>
             {profile.showResumeButtons && (
-              <>
-                <ExternalLink href={profile.resumeUrl} className="btn-outline">
-                  View Resume <Icon name="external" className="btn-icon" />
-                </ExternalLink>
-                <a href={profile.resumeUrl} className="btn-outline" download>
-                  Download Resume <Icon name="download" className="btn-icon" />
-                </a>
-              </>
+              <ExternalLink href={profile.resumeUrl} className="btn btn-secondary">
+                Resume <Icon name="download" />
+              </ExternalLink>
             )}
+            <SocialLinks />
+          </div>
+        </div>
+
+        <div className="hero-visual">
+          <div className="portrait">
+            <img
+              src={profile.photo}
+              alt={`Portrait of ${profile.fullName}`}
+              width={380}
+              height={475}
+              fetchPriority="high"
+            />
           </div>
 
-          <SocialLinks className="hero-socials" />
-        </div>
+          {currentRole && (
+            <div className="float-card float-card--top">
+              <span className="icon-tile icon-tile--sm">
+                <Icon name="building" />
+              </span>
+              <div>
+                <strong>{currentRole.title}</strong>
+                <span>@ {currentRole.organisation}</span>
+              </div>
+            </div>
+          )}
 
-        <div className="hero-photo-wrap">
-          <div className="hero-photo-blob" />
-          <img
-            src={profile.photo}
-            alt={`Portrait of ${profile.fullName}`}
-            className="hero-photo"
-            width={340}
-            height={420}
-            fetchPriority="high"
-          />
+          {accuracy && (
+            <div className="float-card float-card--bottom">
+              <span className="icon-tile icon-tile--sm">
+                <Icon name="eye" />
+              </span>
+              <div>
+                <strong>{accuracy.value} accuracy</strong>
+                <span>Pothole detection research</span>
+              </div>
+            </div>
+          )}
         </div>
       </div>
-      <div className="hero-deco hero-deco-1" aria-hidden="true" />
-      <div className="hero-deco hero-deco-2" aria-hidden="true" />
     </section>
   );
 }

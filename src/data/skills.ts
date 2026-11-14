@@ -1,28 +1,18 @@
-import type { Skill } from '../types';
+import type { SkillGroup } from '../types';
 
-/** Displayed in two columns; order within each column is preserved. */
-export const skillColumns: Skill[][] = [
-  [
-    { name: 'JavaScript / HTML / CSS', level: 92 },
-    { name: 'React & Next.js', level: 90 },
-    { name: 'Node.js / Express.js', level: 85 },
-    { name: 'Python', level: 82 },
-    { name: 'TensorFlow / PyTorch (ML)', level: 78 },
-    { name: 'TypeScript / PHP / C#', level: 75 },
-    { name: 'Tailwind CSS', level: 85 },
-    { name: 'Security: JWT / OAuth 2.0', level: 78 },
-  ],
-  [
-    { name: 'React Native', level: 80 },
-    { name: 'MySQL / MongoDB / PostgreSQL', level: 80 },
-    { name: 'C++', level: 75 },
-    { name: 'Spring Boot / Strapi / .NET MVC', level: 72 },
-    { name: 'Git / Jira / BitBucket', level: 88 },
-    { name: 'Cloud: Vercel / Render / Railway', level: 80 },
-    { name: 'Tools: Postman / Figma / XAMPP', level: 82 },
-    { name: 'Testing: Selenium / TestNG', level: 72 },
-  ],
+/* Mirrors the "Technical Skills" section of the CV. */
+export const skillGroups: SkillGroup[] = [
+  { title: 'Languages', icon: 'terminal', items: ['JavaScript', 'TypeScript', 'Python', 'C++', 'PHP'] },
+  { title: 'Frontend', icon: 'layout', items: ['React.js', 'Next.js', 'Tailwind CSS', 'HTML5', 'CSS3'] },
+  { title: 'Backend', icon: 'server', items: ['Node.js', 'Express.js', 'Spring Boot', '.NET MVC', 'REST APIs'] },
+  { title: 'Databases', icon: 'database', items: ['PostgreSQL', 'MongoDB', 'MySQL', 'Supabase'] },
+  {
+    title: 'DevOps & Cloud',
+    icon: 'cloud',
+    items: ['Docker', 'Jenkins', 'Maven', 'GitLab CI', 'AWS EC2', 'Nginx', 'Cloudflare', 'Vercel', 'Render', 'Railway'],
+  },
+  { title: 'Testing & Quality', icon: 'check-square', items: ['Functional Testing', 'Selenium', 'TestNG', 'SonarQube', 'Postman'] },
+  { title: 'Security & Auth', icon: 'shield', items: ['JWT', 'OAuth 2.0', 'Clerk', 'RBAC'] },
+  { title: 'ML & Computer Vision', icon: 'brain', items: ['TensorFlow', 'Keras', 'NumPy', 'YOLOv8', 'MobileNetV2'] },
+  { title: 'Tools & Workflow', icon: 'tool', items: ['Git', 'GitHub', 'Bitbucket', 'Jira', 'Agile', 'Figma', 'XAMPP'] },
 ];
-
-/** Show the numeric percentage next to each bar. */
-export const SHOW_SKILL_PERCENT = false;

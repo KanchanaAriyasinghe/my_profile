@@ -181,9 +181,6 @@ export function ContactForm() {
           </>
         )}
       </button>
-      <p className="form-note">
-        <span aria-hidden="true">*</span> Required fields
-      </p>
     </form>
   );
 }

@@ -1,18 +1,24 @@
 import { services } from '../../data/services';
+import { useReveal } from '../../hooks/useInView';
 import type { Service } from '../../types';
 import { Icon } from '../ui/Icon';
 import { SectionHeading } from '../ui/SectionHeading';
 import { TagList } from '../ui/TagList';
 
-function ServiceCard({ service }: { service: Service }) {
+function ServiceCard({ service, index }: { service: Service; index: number }) {
+  const { ref, revealClass } = useReveal<HTMLLIElement>();
   return (
-    <li className="service-card">
-      <div className="service-icon-wrap">
-        <Icon name={service.icon} strokeWidth={1.8} />
-      </div>
-      <h3 className="service-title">{service.title}</h3>
-      <p className="service-desc">{service.description}</p>
-      <TagList tags={service.tags} className="service-tags" />
+    <li
+      ref={ref}
+      className={`card card--interactive service-card ${revealClass}`}
+      style={{ animationDelay: `${(index % 3) * 80}ms` }}
+    >
+      <span className="icon-tile">
+        <Icon name={service.icon} />
+      </span>
+      <h3>{service.title}</h3>
+      <p>{service.description}</p>
+      <TagList tags={service.tags} />
     </li>
   );
 }
@@ -23,12 +29,13 @@ export function Services() {
   return (
     <section className="section" id="services" aria-labelledby="services-title">
       <div className="container">
-        <SectionHeading id="services-title" label="What I Do" title="My" accent="Services">
-          End-to-end solutions across software development, machine learning, and intelligent systems.
+        <SectionHeading id="services-title" label="What I do" title="Services I" accent="offer">
+          End-to-end delivery — from interface to infrastructure — across web development, quality engineering and
+          machine learning.
         </SectionHeading>
         <ul className="services-grid">
-          {visible.map((service) => (
-            <ServiceCard key={service.title} service={service} />
+          {visible.map((service, i) => (
+            <ServiceCard key={service.title} service={service} index={i} />
           ))}
         </ul>
       </div>

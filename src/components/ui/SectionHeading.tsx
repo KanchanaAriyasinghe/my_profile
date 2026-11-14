@@ -1,22 +1,23 @@
 import type { ReactNode } from 'react';
 
 interface Props {
+  /** id for the <h2>, referenced by the section's aria-labelledby. */
+  id: string;
   label: string;
   title: string;
+  /** Rendered with the brand gradient after `title`. */
   accent: string;
   children?: ReactNode;
-  /** id for the <h2>, used by the section's aria-labelledby. */
-  id: string;
 }
 
-export function SectionHeading({ label, title, accent, children, id }: Props) {
+export function SectionHeading({ id, label, title, accent, children }: Props) {
   return (
-    <>
-      <div className="section-label">{label}</div>
+    <header className="section-head">
+      <p className="eyebrow">{label}</p>
       <h2 className="section-title" id={id}>
-        {title} <span className="accent">{accent}</span>
+        {title} <span className="text-gradient">{accent}</span>
       </h2>
-      {children && <p className="section-sub">{children}</p>}
-    </>
+      {children && <p className="section-desc">{children}</p>}
+    </header>
   );
 }

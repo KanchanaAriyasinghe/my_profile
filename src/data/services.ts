@@ -1,46 +1,47 @@
 import type { Service } from '../types';
 
+/* Aligned with the "Technical Skills" and experience sections of the CV. */
 export const services: Service[] = [
   {
-    title: 'Full-Stack Web Development',
+    title: 'Frontend Development',
     description:
-      'Building scalable web applications, from modern web interfaces to enterprise-level platforms with authentication, APIs, and real-time features.',
-    icon: 'globe',
-    tags: ['React', 'Node.js', 'MongoDB', 'PostgreSQL'],
+      'Responsive, accessible interfaces built from Figma designs with reusable React components, clean TypeScript, and maintainable styling.',
+    icon: 'layout',
+    tags: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS'],
   },
   {
-    title: 'Machine Learning & AI',
+    title: 'Full-Stack & API Development',
     description:
-      'Developing intelligent models for classification, object detection, and natural language understanding, with experience in AI-driven research and computer vision systems.',
-    icon: 'brain',
-    tags: ['TensorFlow', 'PyTorch', 'YOLOv8', 'Python'],
+      'End-to-end web applications on MERN and PERN stacks — REST APIs, database design, and integrations with ERP and other external services.',
+    icon: 'database',
+    tags: ['Node.js', 'Express.js', 'Spring Boot', 'PostgreSQL', 'MongoDB'],
   },
   {
-    title: 'Computer Vision Systems',
+    title: 'Authentication & Security',
     description:
-      'Developing real-time detection and analysis systems using deep learning, image preprocessing, and edge-deployable AI techniques.',
-    icon: 'eye',
-    tags: ['YOLOv8m', 'MobileNetV2', 'CycleGAN', 'OpenCV'],
+      'Secure sign-in, user management, and role-based access control so the right people see the right data.',
+    icon: 'shield',
+    tags: ['JWT', 'OAuth 2.0', 'Clerk', 'RBAC', 'Supabase'],
   },
   {
-    title: 'UI/UX Design',
-    description: 'Designing user-friendly, accessible, and modern interfaces with a strong focus on UX and responsive design.',
-    icon: 'pen',
-    tags: ['Figma', 'Wireframing', 'Prototyping', 'Design Systems'],
+    title: 'DevOps & Cloud Deployment',
+    description:
+      'Containerised, repeatable environments and automated pipelines that take applications from repository to production.',
+    icon: 'cloud',
+    tags: ['Docker', 'Jenkins', 'GitLab CI', 'AWS EC2', 'Nginx', 'Vercel'],
   },
   {
     title: 'QA & Software Testing',
     description:
-      'Ensuring software quality through structured functional testing and automated test suites, identifying bugs early and validating application behaviour across scenarios.',
+      'Structured functional testing and automated test suites that catch bugs early and validate behaviour across scenarios.',
     icon: 'check-square',
-    tags: ['Selenium', 'TestNG', 'Functional Testing', 'Test Automation'],
+    tags: ['Selenium', 'TestNG', 'Functional Testing', 'Postman', 'SonarQube'],
   },
   {
-    title: 'API & Backend',
+    title: 'Machine Learning & Computer Vision',
     description:
-      'Building scalable backend systems with APIs, ERP integrations, and database management using MySQL, MongoDB, and PostgreSQL.',
-    icon: 'database',
-    tags: ['Express.js', 'Spring Boot', 'MySQL', 'Strapi'],
-    hidden: true,
+      'Real-time detection and classification models — from image preprocessing to optimised, edge-deployable deep learning.',
+    icon: 'brain',
+    tags: ['TensorFlow', 'Keras', 'YOLOv8', 'MobileNetV2', 'NumPy'],
   },
 ];

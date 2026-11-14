@@ -4,23 +4,23 @@ import { useInView } from '../../hooks/useInView';
 import type { Stat } from '../../types';
 import { Icon } from '../ui/Icon';
 
-function StatCard({ stat, index, start }: { stat: Stat; index: number; start: boolean }) {
-  const value = useCountUp(stat.value, start, { delay: index * 100 });
-  const final = `${stat.value}${stat.suffix ?? ''}`;
+function StatItem({ stat, index, start }: { stat: Stat; index: number; start: boolean }) {
+  const value = useCountUp(stat.value, start, { delay: index * 90, duration: 1600 });
 
   return (
-    <li className="stat-card reveal-stat">
-      <div className="stat-icon-wrap">
-        <Icon name={stat.icon} strokeWidth={1.8} />
-      </div>
-      <div className="stat-number-wrap">
+    <li className="stat">
+      <div className="stat-top">
         {/* Screen readers get the final value; the animated digits are visual only. */}
         <span className="stat-number" aria-hidden="true">
           {value}
           {stat.suffix}
         </span>
-        <span className="sr-only">{final}</span>
+        <Icon name={stat.icon} />
       </div>
+      <span className="sr-only">
+        {stat.value}
+        {stat.suffix}
+      </span>
       <p className="stat-label">{stat.label}</p>
     </li>
   );
@@ -30,11 +30,11 @@ export function Stats() {
   const { ref, inView } = useInView<HTMLUListElement>({ threshold: 0.3, rootMargin: '0px' });
 
   return (
-    <section className="stats-section" id="stats" aria-label="Highlights">
+    <section className="stats" id="stats" aria-label="Highlights">
       <div className="container">
-        <ul className="stats-grid" ref={ref}>
+        <ul className="card stats-grid" ref={ref}>
           {stats.map((stat, i) => (
-            <StatCard key={stat.label} stat={stat} index={i} start={inView} />
+            <StatItem key={stat.label} stat={stat} index={i} start={inView} />
           ))}
         </ul>
       </div>
