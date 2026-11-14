@@ -39,9 +39,6 @@ export const socialLinks: SocialLink[] = [
 /** Total months across visible roles — stays correct as time passes. */
 const industryMonths = experience.filter((e) => !e.hidden).reduce((sum, e) => sum + monthsBetween(e.start, e.end), 0);
 
-/** The role without an end date, if any (shown in the hero). */
-export const currentRole = experience.find((e) => !e.hidden && !e.end);
-
 export const stats: Stat[] = [
   { value: 13, suffix: '+', label: 'Projects Completed', icon: 'check-square' },
   { value: industryMonths, suffix: '+', label: 'Months Industry Experience', icon: 'users' },

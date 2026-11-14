@@ -1,12 +1,10 @@
-import { currentRole, profile } from '../../data/profile';
-import { research } from '../../data/research';
+import { profile } from '../../data/profile';
 import { ExternalLink } from '../ui/ExternalLink';
 import { Icon } from '../ui/Icon';
 import { SocialLinks } from '../ui/SocialLinks';
 
 export function Hero() {
   const { headline } = profile;
-  const accuracy = research.stats[0];
 
   return (
     <section id="home" className="hero" aria-labelledby="hero-name">
@@ -67,30 +65,6 @@ export function Hero() {
               fetchPriority="high"
             />
           </div>
-
-          {currentRole && (
-            <div className="float-card float-card--top">
-              <span className="icon-tile icon-tile--sm">
-                <Icon name="building" />
-              </span>
-              <div>
-                <strong>{currentRole.title}</strong>
-                <span>@ {currentRole.organisation}</span>
-              </div>
-            </div>
-          )}
-
-          {accuracy && (
-            <div className="float-card float-card--bottom">
-              <span className="icon-tile icon-tile--sm">
-                <Icon name="eye" />
-              </span>
-              <div>
-                <strong>{accuracy.value} accuracy</strong>
-                <span>Pothole detection research</span>
-              </div>
-            </div>
-          )}
         </div>
       </div>
     </section>
