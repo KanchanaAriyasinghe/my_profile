@@ -9,6 +9,12 @@ const stroke: Record<string, ReactNode> = {
       <polyline points="12 5 19 12 12 19" />
     </>
   ),
+  'arrow-left': (
+    <>
+      <line x1="19" y1="12" x2="5" y2="12" />
+      <polyline points="12 19 5 12 12 5" />
+    </>
+  ),
   external: (
     <>
       <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
@@ -269,6 +275,7 @@ const fill: Record<string, ReactNode> = {
 
 export type IconName =
   | 'arrow-up'
+  | 'arrow-left'
   | 'arrow-right'
   | 'external'
   | 'download'

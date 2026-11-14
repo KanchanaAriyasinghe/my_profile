@@ -60,7 +60,7 @@ function ExperienceItem({ entry, defaultOpen }: { entry: TimelineEntry; defaultO
               {open ? 'Hide' : 'Show'} key responsibilities ({entry.highlights.length})
               <Icon name="chevron-down" />
             </button>
-            <div id={panelId} className={`tl-collapse${open ? ' is-open' : ''}`} inert={!open}>
+            <div id={panelId} className={`collapse${open ? ' is-open' : ''}`} inert={!open}>
               <div>
                 <ul className="tl-highlights">
                   {entry.highlights.map((h) => (

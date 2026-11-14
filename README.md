@@ -6,7 +6,8 @@ Built with **React + TypeScript + Vite**. Live at https://kanchanaariyasinghe.gi
 ## Features
 
 - Light / dark theme (follows the system setting, remembers your choice)
-- Project filtering by category
+- Interactive project explorer: list + live preview panel (browser-frame mockup) on desktop, accordion on mobile, full
+  keyboard support, category filters
 - Animated stats and scroll-reveal (respects “reduce motion”); experience months are calculated from role dates
 - Accessible navigation: skip link, keyboard-friendly menu (Esc to close), focus rings, screen-reader labels
 - Custom video player with keyboard seeking
@@ -21,6 +22,7 @@ npm run dev        # http://localhost:5173/my_profile/
 npm run build      # type-check + production build into dist/
 npm run preview    # serve the production build
 npm run lint
+npm run format     # Prettier
 ```
 
 Requires Node 20+.
@@ -53,10 +55,10 @@ src/
   sections.ts   Page section order + nav labels (single source of truth)
   components/
     layout/     Header, Footer, ScrollToTop
-    sections/   Hero, Stats, Resume (Experience), Projects, Services, Skills, Research, References, Contact
+    sections/   Hero, Stats, Resume (Experience), Projects, Services, Skills, Achievements, Research, References, Contact
     ui/         Section, SectionHeading, Icon, TagList, ExternalLink, SocialLinks
   data/         All site content (typed)
-  hooks/        useInView, useCountUp, useScrollSpy, useTheme, …
+  hooks/        useInView, useCountUp, useScrollSpy, useMediaQuery, useTheme, …
   lib/          asset path, dates, section helpers, EmailJS client
   styles/       tokens.css (colours, type, spacing) · base.css · components.css · sections.css
 ```
@@ -67,5 +69,6 @@ EmailJS keys live in `.env` (they are public browser keys). Override them locall
 
 ## Deployment
 
-Every push to `main` runs `.github/workflows/deploy.yml`, which lints, builds and publishes `dist/` to GitHub Pages.
-In the repo settings, **Settings → Pages → Build and deployment → Source** must be set to **GitHub Actions**.
+Every push to `main` runs `.github/workflows/deploy.yml`, which checks formatting, lints, builds and publishes `dist/`
+to GitHub Pages. In the repo settings, **Settings → Pages → Build and deployment → Source** must be set to
+**GitHub Actions**.

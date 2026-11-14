@@ -138,7 +138,13 @@ export function ContactForm() {
         <label htmlFor={fieldId('email')}>
           Email Address <span aria-hidden="true">*</span>
         </label>
-        <input type="email" autoComplete="email" placeholder="ariyasinghekanchana@gmail.com" required {...fieldProps('email')} />
+        <input
+          type="email"
+          autoComplete="email"
+          placeholder="ariyasinghekanchana@gmail.com"
+          required
+          {...fieldProps('email')}
+        />
         {errorText('email')}
       </div>
 
